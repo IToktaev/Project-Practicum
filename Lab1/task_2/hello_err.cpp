@@ -2,7 +2,7 @@
 
 int main()
 {
-    std::cuot << "Hello, Ivan!" << std::endl;
+    // std::cuot << "Hello, Ivan!" << std::endl;
     return 0;
 }
 
