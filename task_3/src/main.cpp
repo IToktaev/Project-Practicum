@@ -1,8 +1,5 @@
 #include <SFML/Graphics.hpp>
 
-const sf::Color Gray(128, 128, 128);
-const sf::Color Black(0, 0, 0);
-
 int main()
 {
     sf::RenderWindow window(

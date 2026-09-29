@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 
-const sf::Color Gray(128, 128, 128);
-const sf::Color Black(0, 0, 0);
+const sf::Color GRAY(128, 128, 128);
+const sf::Color BLACK(0, 0, 0);
 
 int main()
 {
@@ -10,7 +10,7 @@ int main()
         "Toktaev"
     );
 
-    sf::Color currentColor = Black;
+    sf::Color currentColor = BLACK;
 
     while (window.isOpen())
     {
@@ -26,10 +26,10 @@ int main()
                 }
 
                 if (event->getIf<sf::Event::KeyPressed>()->code == sf::Keyboard::Key::Space) {
-                    if (currentColor == Black) {
-                        currentColor = Gray;
+                    if (currentColor == BLACK) {
+                        currentColor = GRAY;
                     } else {
-                        currentColor = Black;
+                        currentColor = BLACK;
                     }
                 }
             }
