@@ -21,7 +21,7 @@ int main()
             }
 
             if (event->is<sf::Event::KeyPressed>()) {
-                if (event->getIf<sf::Event::KeyPressed>()->code == sf::Keyboard::Key::Enter) {
+                if (event->getIf<sf::Event::KeyPressed>()->code == sf::Keyboard::Key::Escape) {
                     window.close();  
                 }
 

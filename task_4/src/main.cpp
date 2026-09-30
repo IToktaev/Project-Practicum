@@ -9,7 +9,7 @@ struct Position
     float yPos;
 };
 
-void move(float dt, Position& position) {
+void Move(float dt, Position& position) {
     if (
         (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W) ||
         sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up)) &&
@@ -40,7 +40,7 @@ void move(float dt, Position& position) {
     }
 }
 
-void update(sf::RenderWindow& window, float dt, Position& position) {
+void Update(sf::RenderWindow& window, float dt, Position& position) {
     while (const std::optional event = window.pollEvent())
     {
         if (event->is<sf::Event::Closed>()) {
@@ -48,7 +48,7 @@ void update(sf::RenderWindow& window, float dt, Position& position) {
         }     
     }
 
-    move(dt, position);
+    Move(dt, position);
 }
 
 int main()
@@ -69,7 +69,7 @@ int main()
     {
         float dt = clock.restart().asSeconds();
 
-        update(window, dt, position);
+        Update(window, dt, position);
 
         window.clear(sf::Color::Blue);
 

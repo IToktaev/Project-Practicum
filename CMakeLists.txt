@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(SFML 3 CONFIG REQUIRED COMPONENTS Graphics Window System)
 
-add_executable(app task_5/src/main.cpp)
+add_executable(app task_6/src/main.cpp)
 
 target_link_libraries(app PRIVATE
     SFML::Graphics
