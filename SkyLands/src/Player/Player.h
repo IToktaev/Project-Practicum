@@ -9,8 +9,8 @@ public:
     void Draw(sf::RenderWindow& window);
 
 private:
-    sf::Sprite sprite;
     sf::Texture texture;
+    sf::Sprite sprite;
     sf::Vector2f velocity;
     bool isGrounded;
 };
