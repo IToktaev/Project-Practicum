@@ -152,6 +152,30 @@ src/Game/Game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Game/Game.cpp.s
 .PHONY : src/Game/Game.cpp.s
 
+src/Map/Map.obj: src/Map/Map.cpp.obj
+.PHONY : src/Map/Map.obj
+
+# target to build an object file
+src/Map/Map.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Map/Map.cpp.obj
+.PHONY : src/Map/Map.cpp.obj
+
+src/Map/Map.i: src/Map/Map.cpp.i
+.PHONY : src/Map/Map.i
+
+# target to preprocess a source file
+src/Map/Map.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Map/Map.cpp.i
+.PHONY : src/Map/Map.cpp.i
+
+src/Map/Map.s: src/Map/Map.cpp.s
+.PHONY : src/Map/Map.s
+
+# target to generate assembly for a file
+src/Map/Map.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Map/Map.cpp.s
+.PHONY : src/Map/Map.cpp.s
+
 src/Player/Player.obj: src/Player/Player.cpp.obj
 .PHONY : src/Player/Player.obj
 
@@ -212,6 +236,9 @@ help:
 	@echo ... src/Game/Game.obj
 	@echo ... src/Game/Game.i
 	@echo ... src/Game/Game.s
+	@echo ... src/Map/Map.obj
+	@echo ... src/Map/Map.i
+	@echo ... src/Map/Map.s
 	@echo ... src/Player/Player.obj
 	@echo ... src/Player/Player.i
 	@echo ... src/Player/Player.s

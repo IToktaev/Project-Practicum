@@ -1,1 +1,1 @@
--IC:/PP/SkyLands/src/Player -IC:/PP/SkyLands/src/Game -isystem C:/SFML/include
+-IC:/PP/SkyLands/src/Player -IC:/PP/SkyLands/src/Game -IC:/PP/SkyLands/src/Map -isystem C:/SFML/include
