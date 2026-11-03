@@ -2,19 +2,23 @@
 #include <SFML/Graphics.hpp>
 #include "../Player/Player.h"
 #include "../Map/Map.h"
+#include "../Level/Level.h"
+#include "../Menu/Menu.h"
+#include "GameState.h"
 
 class Game {
     public: 
         Game();
         void Run();
+        void RenderHome();
+        void RunLevel();
 
     private:
-        sf::RenderWindow window;
-        sf::Clock clock;
-        sf::View view;
+        sf::RenderWindow m_window;
+        sf::Clock m_clock;
 
-        Player player;
-        Map map;
+        Level m_level;
+        Menu m_menu;
 
-        sf::Vector2f CountCameraPosition();
+        GameState m_currentState;
 };

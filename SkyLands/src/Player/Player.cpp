@@ -22,6 +22,8 @@ const int TEXTURE_SIZE = 4000;
 
 const float EPSILON = 0.001f;
 
+const float HITBOX_X_SCALE_FACTOR = 0.6;
+
 Player::Player()
     :m_sprite(m_texture)       
 {
@@ -38,7 +40,6 @@ Player::Player()
     sf::FloatRect bounds = m_sprite.getLocalBounds();
     m_sprite.setOrigin({bounds.size.x / 2.0f, bounds.size.y / 2.0f});
     m_sprite.setScale({PLAYER_SCALE, PLAYER_SCALE});
-
     m_sprite.setPosition({START_X_POS, START_Y_POS});
 
     m_velocity = {0.0f, 0.0f};
@@ -113,13 +114,14 @@ void Player::CountJump(
 
 void Player::ResolveCollisions(
     sf::Sprite& sprite, 
+    sf::FloatRect hitbox,
     sf::Vector2f& velocity, 
     bool& isGrounded, 
     float floorY,
     sf::Vector2f tileSetSize
 ) {
-    float halfWidth = sprite.getGlobalBounds().size.x / 2.0f;
-    float halfHeight = sprite.getGlobalBounds().size.y / 2.0f;
+    float halfWidth = hitbox.size.x / 2.0f;
+    float halfHeight = hitbox.size.y / 2.0f;
 
     float x = sprite.getPosition().x;
     float y = sprite.getPosition().y;
@@ -130,7 +132,7 @@ void Player::ResolveCollisions(
         isGrounded = true;
     }
 
-    if (x - halfWidth < 0.0f) {
+    if (x - halfWidth < 0.0f) {     
         sprite.setPosition({halfWidth, y});
         velocity.x = 0.0f;
     }
@@ -141,15 +143,26 @@ void Player::ResolveCollisions(
     }
 }
 
-void Player::MoveX(float dt, const Map& map) {
-    m_sprite.move({m_velocity.x * dt, 0.0f});
-
+sf::FloatRect Player::GetHitbox() const {
     sf::FloatRect bounds = m_sprite.getGlobalBounds();
 
-    int left = std::floor(bounds.position.x / TILE_SIZE);
-    int right = std::floor((bounds.position.x + bounds.size.x - EPSILON) / TILE_SIZE);
-    int top = std::floor(bounds.position.y / TILE_SIZE);
-    int bottom = std::floor((bounds.position.y + bounds.size.y - EPSILON) / TILE_SIZE);
+    float width = bounds.size.x * HITBOX_X_SCALE_FACTOR;
+
+    return {
+        {bounds.position.x + (bounds.size.x - width) / 2.0f,
+         bounds.position.y},
+        {width, bounds.size.y}
+    };
+}
+
+void Player::MoveX(float dt, const Map& map) {
+    m_sprite.move({m_velocity.x * dt, 0.0f});
+    sf::FloatRect hitbox = GetHitbox();
+
+    int left = std::floor(hitbox.position.x / TILE_SIZE);
+    int right = std::floor((hitbox.position.x + hitbox.size.x - EPSILON) / TILE_SIZE);
+    int top = std::floor(hitbox.position.y / TILE_SIZE);
+    int bottom = std::floor((hitbox.position.y + hitbox.size.y - EPSILON) / TILE_SIZE);
 
     for (int row = top; row <= bottom; row++) {
         for (int col = left; col <= right; col++) {
@@ -162,12 +175,12 @@ void Player::MoveX(float dt, const Map& map) {
 
             if (m_velocity.x > 0.0f) {
                 m_sprite.setPosition({
-                    tileX - bounds.size.x / 2.0f - EPSILON,
+                    tileX - hitbox.size.x / 2.0f - EPSILON,
                     m_sprite.getPosition().y
                 });
             } else if (m_velocity.x < 0.0f) {
                 m_sprite.setPosition({
-                    tileX + TILE_SIZE + bounds.size.x / 2.0f + EPSILON,
+                    tileX + TILE_SIZE + hitbox.size.x / 2.0f + EPSILON,
                     m_sprite.getPosition().y
                 });
             }
@@ -181,8 +194,7 @@ void Player::MoveX(float dt, const Map& map) {
 void Player::MoveY(float dt, const Map& map) {
     m_velocity.y += GRAVITY * dt;
     m_sprite.move({0.0f, m_velocity.y * dt});
-
-    sf::FloatRect bounds = m_sprite.getGlobalBounds();
+    sf::FloatRect bounds = GetHitbox();
 
     int left = std::floor(bounds.position.x / TILE_SIZE);
     int right =  std::floor((bounds.position.x + bounds.size.x - EPSILON) / TILE_SIZE );
@@ -222,14 +234,28 @@ void Player::MoveY(float dt, const Map& map) {
 
 void Player::Draw(sf::RenderWindow& window) {
     window.draw(m_sprite);
+
+    // sf::RectangleShape debugRect;
+
+    // sf::FloatRect hitbox = GetHitbox();
+
+    // debugRect.setPosition(hitbox.position);
+    // debugRect.setSize(hitbox.size);
+    // debugRect.setFillColor(sf::Color::Transparent);
+    // debugRect.setOutlineColor(sf::Color::Red);
+    // debugRect.setOutlineThickness(1.0f);
+
+    // window.draw(debugRect);
 }
 
 void Player::Update(float dt, sf::Vector2f tileSetSize, float floor, Map map) {
+    sf::FloatRect hitbox = GetHitbox();
+
     CountMove(dt, m_velocity, m_sprite);
     MoveX(dt, map);
     MoveY(dt, map);
 
-    ResolveCollisions(m_sprite, m_velocity, m_isGrounded, floor, tileSetSize);    
+    ResolveCollisions(m_sprite, hitbox, m_velocity, m_isGrounded, floor, tileSetSize);    
 
     CountJump(dt, m_velocity, m_isGrounded, m_jumpForce, m_isJumping, m_jumpChargeTime);
 }

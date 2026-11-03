@@ -26,15 +26,17 @@ bool Map::MapIsSolid(float worldX, float worldY) const  {
     return MapGetTile(worldX, worldY) == TileType::Solid;
 }
 
-void Map::MapInit() {
-    std::ifstream file("../assets/levels/testLevel.txt");
+void Map::MapInit(int mapId) {
+    std::ifstream file("../assets/levels/testLevel_" + std::to_string(mapId) + ".txt");
 
     if (!file.is_open()) {
         std::cout << "Failed to open file\n";
         return;  
     }
 
-    if (!m_tilesetTexture.loadFromFile("../assets/levels/tileset.png")) {
+    if (
+        !m_tilesetTexture.loadFromFile("../assets/levels/tileset_" + std::to_string(mapId) +  ".png")
+    ) {
         std::cout << "Failed to open tileset\n";
         return;
     }

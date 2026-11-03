@@ -33,6 +33,7 @@ private:
     );
     void ResolveCollisions(
         sf::Sprite& sprite, 
+        sf::FloatRect hitbox,
         sf::Vector2f& velocity, 
         bool& isGrounded, 
         float floorY,
@@ -41,4 +42,5 @@ private:
 
     void MoveX(float dt, const Map& map);
     void MoveY(float dt, const Map& map);
+    sf::FloatRect GetHitbox() const;
 };

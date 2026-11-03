@@ -15,12 +15,16 @@ add_executable(app
     src/Player/Player.cpp
     src/Game/Game.cpp
     src/Map/Map.cpp
+    src/Level/Level.cpp
+    src/Menu/Menu.cpp
 )
 
 target_include_directories(app PRIVATE 
     src/Player
     src/Game
     src/Map
+    src/Level
+    src/Menu
 )
 
 target_link_libraries(app PRIVATE

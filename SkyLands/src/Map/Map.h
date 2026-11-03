@@ -8,7 +8,7 @@ const uint32_t TILE_SIZE = 50;
 class Map {
 
 public:
-    void MapInit();
+    void MapInit(int mapId);
     void MapDraw(sf::RenderWindow& window);
     TileType MapGetTile(float worldX, float worldY) const;
     bool MapIsSolid(float worldX, float worldY) const;

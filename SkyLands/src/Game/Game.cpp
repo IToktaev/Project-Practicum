@@ -7,53 +7,100 @@ const int WINDOW_WIDTH = 800;
 const int WINDOW_HEIGHT = 600;
 
 Game::Game()
-    :   window(sf::VideoMode({WINDOW_WIDTH, WINDOW_HEIGHT}), "SkyLands"),
-        view(sf::FloatRect({0.0f, 0.0f}, {WINDOW_WIDTH, WINDOW_HEIGHT}))
+    :   m_window(sf::VideoMode({WINDOW_WIDTH, WINDOW_HEIGHT}), "SkyLands"),
+        m_currentState(homeState)
 {
 
 }
 
-sf::Vector2f Game::CountCameraPosition() {
-    sf::Vector2f targetCenter = player.GetPosition();
+void Game::RenderHome() {
+    sf::RectangleShape rectLevel1({200.f, 50.f});
+    rectLevel1.setPosition({100.f, 100.f});
+    rectLevel1.setFillColor(sf::Color::Red);
 
-    float minX = WINDOW_WIDTH / 2.0f;
-    float maxX = map.GetWidth() * TILE_SIZE - WINDOW_WIDTH / 2.0f;
-    float minY = WINDOW_HEIGHT / 2.0f;
-    float maxY = map.GetHeight() * TILE_SIZE - WINDOW_HEIGHT / 2.0f;
+    sf::RectangleShape rectLevel2({200.f, 50.f});
+    rectLevel2.setPosition({100.f, 200.f});
+    rectLevel2.setFillColor(sf::Color::Blue);
 
-    float clampedX = std::clamp(targetCenter.x, minX, maxX);
-    float clampedY = std::clamp(targetCenter.y, minY, maxY);
+    sf::RectangleShape rectLevel3({200.f, 50.f});
+    rectLevel3.setPosition({100.f, 300.f});
+    rectLevel3.setFillColor(sf::Color::Green);
 
-    return {clampedX, clampedY};
+    m_window.draw(rectLevel1);
+    m_window.draw(rectLevel2);
+    m_window.draw(rectLevel3);
 }
 
-void Game::Run()
-{
-    map.MapInit();
+void Game::Run() {
+    while (m_window.isOpen()) {
+        float dt = m_clock.restart().asSeconds();
 
-    while (window.isOpen()) {
-        float dt = clock.restart().asSeconds();
-
-        while (const std::optional event = window.pollEvent()) {
+        while (const std::optional event = m_window.pollEvent()) {
             if (event->is<sf::Event::Closed>()) {
-                window.close();
+                m_window.close();
+            }
+
+            if (m_currentState == homeState) {
+                if (
+                    const sf::Event::MouseButtonPressed* mousePressed =
+                    event->getIf<sf::Event::MouseButtonPressed>()
+                ) {
+                    if (mousePressed->button == sf::Mouse::Button::Left) {
+                        sf::Vector2f pos = m_window.mapPixelToCoords(mousePressed->position);
+
+                        if (sf::FloatRect({100.f, 100.f}, {200.f, 50.f}).contains(pos)) {
+                            m_currentState = levelState;
+                            m_level.Init(1);
+                        } else if (sf::FloatRect({100.f, 200.f}, {200.f, 50.f}).contains(pos)) {
+                            m_currentState = levelState;
+                            m_level.Init(2);
+                        } else if (sf::FloatRect({100.f, 300.f}, {200.f, 50.f}).contains(pos)) {
+                            m_currentState = levelState;
+                            m_level.Init(3);
+                        }
+                    }
+                }
+            }
+
+            if (m_currentState == menuState) {
+                if (
+                    const sf::Event::MouseButtonPressed* mousePressed =
+                    event->getIf<sf::Event::MouseButtonPressed>()
+                ) {
+                    if (mousePressed->button == sf::Mouse::Button::Left) {
+                        sf::Vector2f pos = m_window.mapPixelToCoords(mousePressed->position);
+
+                        if(sf::FloatRect({100.f, 100.f}, {200.f, 50.f}).contains(pos)) {
+                            m_currentState = homeState;
+                            std::cout << "To Home\n";
+                        }
+
+                        if(sf::FloatRect({100.f, 200.f}, {200.f, 50.f}).contains(pos)) {
+                            m_currentState = levelState;
+                            std::cout << "Back to level\n";
+                        }
+                    }
+                }
+            }
+
+            if (m_currentState == levelState) {
+                m_currentState = m_level.HandleLevelStateChange();
             }
         }
 
-        sf::Vector2f tileSetSize = {
-            static_cast<float>(map.GetWidth() * TILE_SIZE), 
-            static_cast<float>(map.GetHeight() * TILE_SIZE)
-        };
-        player.Update(dt, tileSetSize, FLOOR_Y, map);
+        m_window.clear(sf::Color::Black);
 
-        view.setCenter(CountCameraPosition());
+        if (m_currentState == homeState) {
+            m_window.setView(m_window.getDefaultView());
+            RenderHome();
+        } else if (m_currentState == menuState) {
+            m_window.setView(m_window.getDefaultView());
+            m_menu.RenderMenu(m_window);
+        } else if (m_currentState == levelState) {
+            m_level.Update(dt);
+            m_level.Draw(m_window);
+        }
 
-        window.setView(view);
-        map.MapDraw(window);
-        player.Draw(window);
-
-        window.display();
+        m_window.display();
     }
 }
-
-//надо ВЕЗДЕ сделать префиксную нотацию m_
