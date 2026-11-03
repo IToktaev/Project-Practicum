@@ -63,24 +63,9 @@ void Game::Run() {
             }
 
             if (m_currentState == menuState) {
-                if (
-                    const sf::Event::MouseButtonPressed* mousePressed =
-                    event->getIf<sf::Event::MouseButtonPressed>()
-                ) {
-                    if (mousePressed->button == sf::Mouse::Button::Left) {
-                        sf::Vector2f pos = m_window.mapPixelToCoords(mousePressed->position);
-
-                        if(sf::FloatRect({100.f, 100.f}, {200.f, 50.f}).contains(pos)) {
-                            m_currentState = homeState;
-                            std::cout << "To Home\n";
-                        }
-
-                        if(sf::FloatRect({100.f, 200.f}, {200.f, 50.f}).contains(pos)) {
-                            m_currentState = levelState;
-                            std::cout << "Back to level\n";
-                        }
-                    }
-                }
+                const sf::Event::MouseButtonPressed* mousePressed =
+                    event->getIf<sf::Event::MouseButtonPressed>();
+                m_currentState = m_menu.HandleMenuStateChange(mousePressed, &m_window);
             }
 
             if (m_currentState == levelState) {

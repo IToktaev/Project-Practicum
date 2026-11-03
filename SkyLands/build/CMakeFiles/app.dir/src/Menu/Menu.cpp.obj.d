@@ -249,8 +249,12 @@ CMakeFiles/app.dir/src/Menu/Menu.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/utility \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_relops.h \
  C:/SFML/include/SFML/System/Clock.hpp \
+ C:/PP/SkyLands/src/Game/GameState.h \
  C:/SFML/include/SFML/Graphics/RectangleShape.hpp \
  C:/SFML/include/SFML/Graphics/Shape.hpp \
  C:/SFML/include/SFML/Graphics/Drawable.hpp \
  C:/SFML/include/SFML/Graphics/Transformable.hpp \
- C:/SFML/include/SFML/Graphics/VertexArray.hpp
+ C:/SFML/include/SFML/Graphics/VertexArray.hpp \
+ C:/msys64/ucrt64/include/c++/15.2.0/iostream \
+ C:/msys64/ucrt64/include/c++/15.2.0/istream \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/istream.tcc
