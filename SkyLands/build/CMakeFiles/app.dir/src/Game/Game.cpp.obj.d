@@ -301,7 +301,8 @@ CMakeFiles/app.dir/src/Game/Game.cpp.obj: \
  C:/SFML/include/SFML/System/TimeoutWithPredicate.hpp \
  C:/SFML/include/SFML/System/Version.hpp \
  C:/PP/SkyLands/src/Player/Player.h C:/PP/SkyLands/src/Map/Map.h \
- C:/PP/SkyLands/src/Map/TileType.h \
+ C:/PP/SkyLands/src/Map/TileType.h C:/PP/SkyLands/src/Level/Level.h \
+ C:/PP/SkyLands/src/Game/GameState.h C:/PP/SkyLands/src/Menu/Menu.h \
  C:/msys64/ucrt64/include/c++/15.2.0/algorithm \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algo.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/algorithmfwd.h \

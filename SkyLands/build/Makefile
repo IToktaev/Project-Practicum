@@ -59,7 +59,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = C:\PP\SkyLands
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\PP\Skylands\build
+CMAKE_BINARY_DIR = C:\PP\SkyLands\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\PP\Skylands\build\CMakeFiles C:\PP\Skylands\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\PP\SkyLands\build\CMakeFiles C:\PP\SkyLands\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\PP\Skylands\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\PP\SkyLands\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -152,6 +152,30 @@ src/Game/Game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Game/Game.cpp.s
 .PHONY : src/Game/Game.cpp.s
 
+src/Level/Level.obj: src/Level/Level.cpp.obj
+.PHONY : src/Level/Level.obj
+
+# target to build an object file
+src/Level/Level.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Level/Level.cpp.obj
+.PHONY : src/Level/Level.cpp.obj
+
+src/Level/Level.i: src/Level/Level.cpp.i
+.PHONY : src/Level/Level.i
+
+# target to preprocess a source file
+src/Level/Level.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Level/Level.cpp.i
+.PHONY : src/Level/Level.cpp.i
+
+src/Level/Level.s: src/Level/Level.cpp.s
+.PHONY : src/Level/Level.s
+
+# target to generate assembly for a file
+src/Level/Level.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Level/Level.cpp.s
+.PHONY : src/Level/Level.cpp.s
+
 src/Map/Map.obj: src/Map/Map.cpp.obj
 .PHONY : src/Map/Map.obj
 
@@ -175,6 +199,30 @@ src/Map/Map.s: src/Map/Map.cpp.s
 src/Map/Map.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Map/Map.cpp.s
 .PHONY : src/Map/Map.cpp.s
+
+src/Menu/Menu.obj: src/Menu/Menu.cpp.obj
+.PHONY : src/Menu/Menu.obj
+
+# target to build an object file
+src/Menu/Menu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Menu/Menu.cpp.obj
+.PHONY : src/Menu/Menu.cpp.obj
+
+src/Menu/Menu.i: src/Menu/Menu.cpp.i
+.PHONY : src/Menu/Menu.i
+
+# target to preprocess a source file
+src/Menu/Menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Menu/Menu.cpp.i
+.PHONY : src/Menu/Menu.cpp.i
+
+src/Menu/Menu.s: src/Menu/Menu.cpp.s
+.PHONY : src/Menu/Menu.s
+
+# target to generate assembly for a file
+src/Menu/Menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Menu/Menu.cpp.s
+.PHONY : src/Menu/Menu.cpp.s
 
 src/Player/Player.obj: src/Player/Player.cpp.obj
 .PHONY : src/Player/Player.obj
@@ -236,9 +284,15 @@ help:
 	@echo ... src/Game/Game.obj
 	@echo ... src/Game/Game.i
 	@echo ... src/Game/Game.s
+	@echo ... src/Level/Level.obj
+	@echo ... src/Level/Level.i
+	@echo ... src/Level/Level.s
 	@echo ... src/Map/Map.obj
 	@echo ... src/Map/Map.i
 	@echo ... src/Map/Map.s
+	@echo ... src/Menu/Menu.obj
+	@echo ... src/Menu/Menu.i
+	@echo ... src/Menu/Menu.s
 	@echo ... src/Player/Player.obj
 	@echo ... src/Player/Player.i
 	@echo ... src/Player/Player.s
