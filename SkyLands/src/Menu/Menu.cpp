@@ -18,21 +18,22 @@ void Menu::RenderMenu(sf::RenderWindow& window) {
 
 GameState Menu::HandleMenuStateChange(
     const sf::Event::MouseButtonPressed* mousePressed, 
-    sf::RenderWindow* window
+    sf::RenderWindow* window,
+    GameState currentState
 ) {
-     if (mousePressed) {
+    if (mousePressed) {
         if (mousePressed->button == sf::Mouse::Button::Left) {
             sf::Vector2f pos = window->mapPixelToCoords(mousePressed->position);
 
             if(sf::FloatRect({100.f, 100.f}, {200.f, 50.f}).contains(pos)) {
                 return homeState;
-                std::cout << "To Home\n";
             }
 
             if(sf::FloatRect({100.f, 200.f}, {200.f, 50.f}).contains(pos)) {
                 return levelState;
-                std::cout << "Back to level\n";
             }
         }
     }
+
+    return currentState;
 }

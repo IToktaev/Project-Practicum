@@ -65,7 +65,7 @@ void Game::Run() {
             if (m_currentState == menuState) {
                 const sf::Event::MouseButtonPressed* mousePressed =
                     event->getIf<sf::Event::MouseButtonPressed>();
-                m_currentState = m_menu.HandleMenuStateChange(mousePressed, &m_window);
+                m_currentState = m_menu.HandleMenuStateChange(mousePressed, &m_window, m_currentState);
             }
 
             if (m_currentState == levelState) {

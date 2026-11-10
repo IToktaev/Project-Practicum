@@ -10,6 +10,7 @@ class Menu {
 
         GameState HandleMenuStateChange(
             const sf::Event::MouseButtonPressed* mousePressed, 
-            sf::RenderWindow* window
+            sf::RenderWindow* window,
+            GameState currentState
         );
 };
