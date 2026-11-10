@@ -13,24 +13,6 @@ Game::Game()
 
 }
 
-void Game::RenderHome() {
-    sf::RectangleShape rectLevel1({200.f, 50.f});
-    rectLevel1.setPosition({100.f, 100.f});
-    rectLevel1.setFillColor(sf::Color::Red);
-
-    sf::RectangleShape rectLevel2({200.f, 50.f});
-    rectLevel2.setPosition({100.f, 200.f});
-    rectLevel2.setFillColor(sf::Color::Blue);
-
-    sf::RectangleShape rectLevel3({200.f, 50.f});
-    rectLevel3.setPosition({100.f, 300.f});
-    rectLevel3.setFillColor(sf::Color::Green);
-
-    m_window.draw(rectLevel1);
-    m_window.draw(rectLevel2);
-    m_window.draw(rectLevel3);
-}
-
 void Game::Run() {
     while (m_window.isOpen()) {
         float dt = m_clock.restart().asSeconds();
@@ -41,25 +23,10 @@ void Game::Run() {
             }
 
             if (m_currentState == homeState) {
-                if (
-                    const sf::Event::MouseButtonPressed* mousePressed =
-                    event->getIf<sf::Event::MouseButtonPressed>()
-                ) {
-                    if (mousePressed->button == sf::Mouse::Button::Left) {
-                        sf::Vector2f pos = m_window.mapPixelToCoords(mousePressed->position);
-
-                        if (sf::FloatRect({100.f, 100.f}, {200.f, 50.f}).contains(pos)) {
-                            m_currentState = levelState;
-                            m_level.Init(1);
-                        } else if (sf::FloatRect({100.f, 200.f}, {200.f, 50.f}).contains(pos)) {
-                            m_currentState = levelState;
-                            m_level.Init(2);
-                        } else if (sf::FloatRect({100.f, 300.f}, {200.f, 50.f}).contains(pos)) {
-                            m_currentState = levelState;
-                            m_level.Init(3);
-                        }
-                    }
-                }
+                const sf::Event::MouseButtonPressed* mousePressed = 
+                    event->getIf<sf::Event::MouseButtonPressed>();
+                m_currentState = 
+                    m_home.HandleHomeStateChange(mousePressed, &m_window, m_currentState, m_level);
             }
 
             if (m_currentState == menuState) {
@@ -77,7 +44,7 @@ void Game::Run() {
 
         if (m_currentState == homeState) {
             m_window.setView(m_window.getDefaultView());
-            RenderHome();
+            m_home.RenderHome(m_window);
         } else if (m_currentState == menuState) {
             m_window.setView(m_window.getDefaultView());
             m_menu.RenderMenu(m_window);

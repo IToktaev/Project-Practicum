@@ -17,6 +17,7 @@ add_executable(app
     src/Map/Map.cpp
     src/Level/Level.cpp
     src/Menu/Menu.cpp
+    src/Home/Home.cpp
 )
 
 target_include_directories(app PRIVATE 
@@ -25,6 +26,7 @@ target_include_directories(app PRIVATE
     src/Map
     src/Level
     src/Menu
+    src/Home
 )
 
 target_link_libraries(app PRIVATE

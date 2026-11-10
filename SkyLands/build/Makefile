@@ -152,6 +152,30 @@ src/Game/Game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Game/Game.cpp.s
 .PHONY : src/Game/Game.cpp.s
 
+src/Home/Home.obj: src/Home/Home.cpp.obj
+.PHONY : src/Home/Home.obj
+
+# target to build an object file
+src/Home/Home.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Home/Home.cpp.obj
+.PHONY : src/Home/Home.cpp.obj
+
+src/Home/Home.i: src/Home/Home.cpp.i
+.PHONY : src/Home/Home.i
+
+# target to preprocess a source file
+src/Home/Home.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Home/Home.cpp.i
+.PHONY : src/Home/Home.cpp.i
+
+src/Home/Home.s: src/Home/Home.cpp.s
+.PHONY : src/Home/Home.s
+
+# target to generate assembly for a file
+src/Home/Home.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Home/Home.cpp.s
+.PHONY : src/Home/Home.cpp.s
+
 src/Level/Level.obj: src/Level/Level.cpp.obj
 .PHONY : src/Level/Level.obj
 
@@ -284,6 +308,9 @@ help:
 	@echo ... src/Game/Game.obj
 	@echo ... src/Game/Game.i
 	@echo ... src/Game/Game.s
+	@echo ... src/Home/Home.obj
+	@echo ... src/Home/Home.i
+	@echo ... src/Home/Home.s
 	@echo ... src/Level/Level.obj
 	@echo ... src/Level/Level.i
 	@echo ... src/Level/Level.s

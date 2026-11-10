@@ -301,4 +301,5 @@ CMakeFiles/app.dir/src/main.cpp.obj: C:\PP\SkyLands\src\main.cpp \
  C:/SFML/include/SFML/System/Version.hpp \
  C:/PP/SkyLands/src/Player/Player.h C:/PP/SkyLands/src/Map/Map.h \
  C:/PP/SkyLands/src/Map/TileType.h C:/PP/SkyLands/src/Level/Level.h \
- C:/PP/SkyLands/src/Game/GameState.h C:/PP/SkyLands/src/Menu/Menu.h
+ C:/PP/SkyLands/src/Game/GameState.h C:/PP/SkyLands/src/Menu/Menu.h \
+ C:/PP/SkyLands/src/Home/Home.h

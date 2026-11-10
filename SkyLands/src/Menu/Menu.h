@@ -5,9 +5,7 @@
 class Menu {
     public: 
         void RenderMenu(sf::RenderWindow& window);
-        void BackToLevel();
-        void ToHome();
-
+        
         GameState HandleMenuStateChange(
             const sf::Event::MouseButtonPressed* mousePressed, 
             sf::RenderWindow* window,

@@ -5,13 +5,12 @@
 #include "../Level/Level.h"
 #include "../Menu/Menu.h"
 #include "GameState.h"
+#include "../Home/Home.h"
 
 class Game {
     public: 
         Game();
         void Run();
-        void RenderHome();
-        void RunLevel();
 
     private:
         sf::RenderWindow m_window;
@@ -19,6 +18,7 @@ class Game {
 
         Level m_level;
         Menu m_menu;
+        Home m_home;
 
         GameState m_currentState;
 };
