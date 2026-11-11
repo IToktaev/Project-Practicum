@@ -2,7 +2,6 @@
 #include <algorithm>
 #include <iostream>
 
-const float FLOOR_Y = 700.0f;
 const int WINDOW_WIDTH = 800;
 const int WINDOW_HEIGHT = 600;
 

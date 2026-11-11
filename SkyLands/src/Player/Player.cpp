@@ -36,16 +36,6 @@ Player::Player()
         {0, 0},
         {TEXTURE_SIZE, TEXTURE_SIZE}
     });
-
-    sf::FloatRect bounds = m_sprite.getLocalBounds();
-    m_sprite.setOrigin({bounds.size.x / 2.0f, bounds.size.y / 2.0f});
-    m_sprite.setScale({PLAYER_SCALE, PLAYER_SCALE});
-    m_sprite.setPosition({START_X_POS, START_Y_POS});
-
-    m_velocity = {0.0f, 0.0f};
-    m_jumpForce = MIN_JUMP_FORCE;
-    m_isGrounded = false;
-    m_isJumping = false;
 }
 
 void Player::CountMove(float dt, sf::Vector2f& velocity, sf::Sprite& sprite) {
@@ -116,21 +106,12 @@ void Player::ResolveCollisions(
     sf::Sprite& sprite, 
     sf::FloatRect hitbox,
     sf::Vector2f& velocity, 
-    bool& isGrounded, 
-    float floorY,
     sf::Vector2f tileSetSize
 ) {
     float halfWidth = hitbox.size.x / 2.0f;
-    float halfHeight = hitbox.size.y / 2.0f;
 
     float x = sprite.getPosition().x;
     float y = sprite.getPosition().y;
-
-    if (y + halfHeight >= floorY) {
-        sprite.setPosition({x, floorY - halfHeight});
-        velocity.y = 0.0f;
-        isGrounded = true;
-    }
 
     if (x - halfWidth < 0.0f) {     
         sprite.setPosition({halfWidth, y});
@@ -248,15 +229,27 @@ void Player::Draw(sf::RenderWindow& window) {
     // window.draw(debugRect);
 }
 
-void Player::Update(float dt, sf::Vector2f tileSetSize, float floor, Map map) {
+void Player::Update(float dt, sf::Vector2f tileSetSize, Map map) {
     sf::FloatRect hitbox = GetHitbox();
 
     CountMove(dt, m_velocity, m_sprite);
     MoveX(dt, map);
     MoveY(dt, map);
 
-    ResolveCollisions(m_sprite, hitbox, m_velocity, m_isGrounded, floor, tileSetSize);    
+    ResolveCollisions(m_sprite, hitbox, m_velocity, tileSetSize);    
 
     CountJump(dt, m_velocity, m_isGrounded, m_jumpForce, m_isJumping, m_jumpChargeTime);
+}
+
+void Player::Init() {
+    sf::FloatRect bounds = m_sprite.getLocalBounds();
+    m_sprite.setOrigin({bounds.size.x / 2.0f, bounds.size.y / 2.0f});
+    m_sprite.setScale({PLAYER_SCALE, PLAYER_SCALE});
+    m_sprite.setPosition({START_X_POS, START_Y_POS});
+
+    m_velocity = {0.0f, 0.0f};
+    m_jumpForce = MIN_JUMP_FORCE;
+    m_isGrounded = false;
+    m_isJumping = false;
 }
 

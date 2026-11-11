@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/PP/SkyLands/src/Map/Map.cpp" "CMakeFiles/app.dir/src/Map/Map.cpp.obj" "gcc" "CMakeFiles/app.dir/src/Map/Map.cpp.obj.d"
   "C:/PP/SkyLands/src/Menu/Menu.cpp" "CMakeFiles/app.dir/src/Menu/Menu.cpp.obj" "gcc" "CMakeFiles/app.dir/src/Menu/Menu.cpp.obj.d"
   "C:/PP/SkyLands/src/Player/Player.cpp" "CMakeFiles/app.dir/src/Player/Player.cpp.obj" "gcc" "CMakeFiles/app.dir/src/Player/Player.cpp.obj.d"
+  "C:/PP/SkyLands/src/Utils/DrawImage.cpp" "CMakeFiles/app.dir/src/Utils/DrawImage.cpp.obj" "gcc" "CMakeFiles/app.dir/src/Utils/DrawImage.cpp.obj.d"
   "C:/PP/SkyLands/src/main.cpp" "CMakeFiles/app.dir/src/main.cpp.obj" "gcc" "CMakeFiles/app.dir/src/main.cpp.obj.d"
   )
 

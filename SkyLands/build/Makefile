@@ -59,7 +59,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = C:\PP\SkyLands
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\PP\SkyLands\build
+CMAKE_BINARY_DIR = C:\PP\Skylands\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\PP\SkyLands\build\CMakeFiles C:\PP\SkyLands\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\PP\Skylands\build\CMakeFiles C:\PP\Skylands\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\PP\SkyLands\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\PP\Skylands\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -272,6 +272,30 @@ src/Player/Player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Player/Player.cpp.s
 .PHONY : src/Player/Player.cpp.s
 
+src/Utils/DrawImage.obj: src/Utils/DrawImage.cpp.obj
+.PHONY : src/Utils/DrawImage.obj
+
+# target to build an object file
+src/Utils/DrawImage.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Utils/DrawImage.cpp.obj
+.PHONY : src/Utils/DrawImage.cpp.obj
+
+src/Utils/DrawImage.i: src/Utils/DrawImage.cpp.i
+.PHONY : src/Utils/DrawImage.i
+
+# target to preprocess a source file
+src/Utils/DrawImage.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Utils/DrawImage.cpp.i
+.PHONY : src/Utils/DrawImage.cpp.i
+
+src/Utils/DrawImage.s: src/Utils/DrawImage.cpp.s
+.PHONY : src/Utils/DrawImage.s
+
+# target to generate assembly for a file
+src/Utils/DrawImage.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Utils/DrawImage.cpp.s
+.PHONY : src/Utils/DrawImage.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -323,6 +347,9 @@ help:
 	@echo ... src/Player/Player.obj
 	@echo ... src/Player/Player.i
 	@echo ... src/Player/Player.s
+	@echo ... src/Utils/DrawImage.obj
+	@echo ... src/Utils/DrawImage.i
+	@echo ... src/Utils/DrawImage.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

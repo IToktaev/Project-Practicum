@@ -18,6 +18,7 @@ add_executable(app
     src/Level/Level.cpp
     src/Menu/Menu.cpp
     src/Home/Home.cpp
+    src/Utils/DrawImage.cpp
 )
 
 target_include_directories(app PRIVATE 
@@ -27,6 +28,7 @@ target_include_directories(app PRIVATE
     src/Level
     src/Menu
     src/Home
+    src/Utils
 )
 
 target_link_libraries(app PRIVATE

@@ -7,10 +7,12 @@ class Player {
 public:
     Player();
 
-    void Update(float dt, sf::Vector2f tileSetSize, float floor, Map map);
+    void Update(float dt, sf::Vector2f tileSetSize, Map map);
     void Draw(sf::RenderWindow& window);
 
     sf::Vector2f GetPosition() { return m_sprite.getPosition(); }
+
+    void Init();
 
 private:
     sf::Texture m_texture;
@@ -35,8 +37,6 @@ private:
         sf::Sprite& sprite, 
         sf::FloatRect hitbox,
         sf::Vector2f& velocity, 
-        bool& isGrounded, 
-        float floorY,
         sf::Vector2f tileSetSize
     );
 

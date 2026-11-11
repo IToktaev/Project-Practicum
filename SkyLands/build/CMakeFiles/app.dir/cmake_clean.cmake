@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/app.dir/src/Menu/Menu.cpp.obj.d"
   "CMakeFiles/app.dir/src/Player/Player.cpp.obj"
   "CMakeFiles/app.dir/src/Player/Player.cpp.obj.d"
+  "CMakeFiles/app.dir/src/Utils/DrawImage.cpp.obj"
+  "CMakeFiles/app.dir/src/Utils/DrawImage.cpp.obj.d"
   "CMakeFiles/app.dir/src/main.cpp.obj"
   "CMakeFiles/app.dir/src/main.cpp.obj.d"
   "app.exe"

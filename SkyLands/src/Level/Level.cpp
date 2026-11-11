@@ -2,7 +2,8 @@
 #include <algorithm>
 #include <iostream>
 
-const float FLOOR_Y = 700.0f;
+const float DEATH_BORDER = 900.0f;
+const float VICTORY_BORDER = 1000.0f;
 
 const int WINDOW_WIDTH = 800;
 const int WINDOW_HEIGHT = 600;
@@ -19,6 +20,7 @@ Level::Level()
 void Level::Init(int levelId) {
     m_id = levelId;
     m_map.MapInit(levelId);
+    m_player.Init();
 }
 
 sf::Vector2f Level::CountCameraPosition() {
@@ -42,8 +44,7 @@ void Level::Update(float dt) {
         static_cast<float>(m_map.GetHeight() * TILE_SIZE)
     };
 
-    m_player.Update(dt, tileSetSize, FLOOR_Y, m_map);
-
+    m_player.Update(dt, tileSetSize, m_map);
     m_view.setCenter(CountCameraPosition());
 }
 

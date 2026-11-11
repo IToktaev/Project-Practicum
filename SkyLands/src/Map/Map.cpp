@@ -27,7 +27,7 @@ bool Map::MapIsSolid(float worldX, float worldY) const  {
 }
 
 void Map::MapInit(int mapId) {
-    std::ifstream file("../assets/levels/testLevel_" + std::to_string(mapId) + ".txt");
+    std::ifstream file("../assets/levels/level_" + std::to_string(mapId) + ".txt");
 
     if (!file.is_open()) {
         std::cout << "Failed to open file\n";

@@ -2,27 +2,57 @@
 #include <SFML/Graphics/RectangleShape.hpp>
 #include "../Game/GameState.h"
 #include <iostream>
+#include "../Utils/DrawImage.h"
 
-constexpr int FIRST_LEVEL = 1;
-constexpr int SECOND_LEVEL = 2;
-constexpr int THIRD_LEVEL = 3;
+const int FIRST_LEVEL = 1;
+const int SECOND_LEVEL = 2;
+const int THIRD_LEVEL = 3;
+
+const sf::Vector2f ICON_SCALE = {0.5f, 0.5f};
+const sf::Vector2f FIRST_LEVEL_ICON_POSITION = {200.f, 350.f};
+const sf::Vector2f SECOND_LEVEL_ICON_POSITION = {550.f, 220.f};
+const sf::Vector2f THIRD_LEVEL_ICON_POSITION = {330.f, 30.f};
+
+Home::Home()
+    : m_background(m_backgroundTexture),
+      m_levelFirstIcon(m_levelFirstIconTexture),
+      m_levelSecondIcon(m_levelSecondIconTexture),
+      m_levelThirdIcon(m_levelThirdIconTexture)
+{
+    if (!m_backgroundTexture.loadFromFile("../assets/home.png")) {
+        return;
+    }
+
+    if (!m_levelFirstIconTexture.loadFromFile("../assets/level_1_icon.png")) {
+        return;
+    }
+    
+    if (!m_levelSecondIconTexture.loadFromFile("../assets/level_2_icon.png")) {
+        return;
+    }
+
+    if (!m_levelThirdIconTexture.loadFromFile("../assets/level_3_icon.png")) {
+        return;
+    }
+
+    m_background.setTextureRect(sf::IntRect({0, 0}, sf::Vector2i(m_backgroundTexture.getSize())));
+    m_levelFirstIcon.setTextureRect(sf::IntRect({0, 0}, sf::Vector2i(m_levelFirstIconTexture.getSize())));
+    m_levelSecondIcon.setTextureRect(sf::IntRect({0, 0}, sf::Vector2i(m_levelSecondIconTexture.getSize())));
+    m_levelThirdIcon.setTextureRect(sf::IntRect({0, 0}, sf::Vector2i(m_levelThirdIconTexture.getSize())));
+}
 
 void Home::RenderHome(sf::RenderWindow& window) {
-    sf::RectangleShape rectLevel1({200.f, 50.f});
-    rectLevel1.setPosition({100.f, 100.f});
-    rectLevel1.setFillColor(sf::Color::Red);
+    sf::Vector2u windowSize = window.getSize();
+    sf::Vector2u textureSize = m_backgroundTexture.getSize();
 
-    sf::RectangleShape rectLevel2({200.f, 50.f});
-    rectLevel2.setPosition({100.f, 200.f});
-    rectLevel2.setFillColor(sf::Color::Blue);
+    DrawImage(m_background, {
+        static_cast<float>(windowSize.x) / textureSize.x,
+        static_cast<float>(windowSize.y) / textureSize.y
+    }, {0, 0}, window);
 
-    sf::RectangleShape rectLevel3({200.f, 50.f});
-    rectLevel3.setPosition({100.f, 300.f});
-    rectLevel3.setFillColor(sf::Color::Green);
-
-    window.draw(rectLevel1);
-    window.draw(rectLevel2);
-    window.draw(rectLevel3);
+    DrawImage(m_levelFirstIcon, ICON_SCALE, FIRST_LEVEL_ICON_POSITION, window);
+    DrawImage(m_levelSecondIcon, ICON_SCALE, SECOND_LEVEL_ICON_POSITION, window);
+    DrawImage(m_levelThirdIcon, ICON_SCALE, THIRD_LEVEL_ICON_POSITION, window);
 }
 
 GameState Home::HandleHomeStateChange(
@@ -35,13 +65,13 @@ GameState Home::HandleHomeStateChange(
         if (mousePressed->button == sf::Mouse::Button::Left) {
             sf::Vector2f pos = window->mapPixelToCoords(mousePressed->position);
 
-            if (sf::FloatRect({100.f, 100.f}, {200.f, 50.f}).contains(pos)) {
+            if (m_levelFirstIcon.getGlobalBounds().contains(pos)) {
                 level.Init(FIRST_LEVEL);
                 return levelState;
-            } else if (sf::FloatRect({100.f, 200.f}, {200.f, 50.f}).contains(pos)) {
+            } else if (m_levelSecondIcon.getGlobalBounds().contains(pos)) {
                 level.Init(SECOND_LEVEL);
                 return levelState;
-            } else if (sf::FloatRect({100.f, 300.f}, {200.f, 50.f}).contains(pos)) {
+            } else if (m_levelThirdIcon.getGlobalBounds().contains(pos)) {
                 level.Init(THIRD_LEVEL);
                 return levelState;
             }
