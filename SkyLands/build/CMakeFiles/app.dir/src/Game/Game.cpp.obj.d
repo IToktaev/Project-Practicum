@@ -1,5 +1,7 @@
 CMakeFiles/app.dir/src/Game/Game.cpp.obj: \
  C:\PP\SkyLands\src\Game\Game.cpp C:\PP\SkyLands\src\Game\Game.h \
+ C:/PP/SkyLands/src/Displays/Level/Level.h \
+ C:/PP/SkyLands/src/Player/Player.h C:/PP/SkyLands/src/Map/Map.h \
  C:/SFML/include/SFML/Graphics.hpp \
  C:/SFML/include/SFML/Graphics/BlendMode.hpp \
  C:/SFML/include/SFML/Graphics/Export.hpp C:/SFML/include/SFML/Config.hpp \
@@ -300,14 +302,8 @@ CMakeFiles/app.dir/src/Game/Game.cpp.obj: \
  C:/SFML/include/SFML/System/Sleep.hpp \
  C:/SFML/include/SFML/System/TimeoutWithPredicate.hpp \
  C:/SFML/include/SFML/System/Version.hpp \
- C:/PP/SkyLands/src/Player/Player.h C:/PP/SkyLands/src/Map/Map.h \
- C:/PP/SkyLands/src/Map/TileType.h C:/PP/SkyLands/src/Level/Level.h \
- C:/PP/SkyLands/src/Game/GameState.h C:/PP/SkyLands/src/Menu/Menu.h \
- C:/PP/SkyLands/src/Home/Home.h \
- C:/msys64/ucrt64/include/c++/15.2.0/algorithm \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algo.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/algorithmfwd.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_heap.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/uniform_int_dist.h \
- C:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_algorithm_defs.h \
- C:/msys64/ucrt64/include/c++/15.2.0/iostream
+ C:/PP/SkyLands/src/Map/TileType.h C:/PP/SkyLands/src/Game/GameState.h \
+ C:/PP/SkyLands/src/Displays/Menu/Menu.h \
+ C:/PP/SkyLands/src/Displays/Home/Home.h \
+ C:/PP/SkyLands/src/Displays/LevelFinalScreen/LevelFinalScreen.h \
+ C:/PP/SkyLands/src/GlobalConstants/GlobalConstants.h

@@ -1,10 +1,9 @@
 #include "Menu.h"
 #include <SFML/Graphics/RectangleShape.hpp>
 #include "../Game/GameState.h"
-#include <iostream>
 #include "../Utils/DrawImage.h"
 
-const sf::Vector2f BUTTON_SCALE = {1.0f, 1.0f};
+const sf::Vector2f BUTTON_SCALE = {2.0f, 2.0f};
 const sf::Vector2f BUTTON_HOME_POSITION = {225.0f, 0.0f};
 const sf::Vector2f BUTTON_LEVEL_POSITION = {225.0f, 250.0f};
 

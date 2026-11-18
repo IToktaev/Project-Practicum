@@ -1,9 +1,8 @@
 #include "Level.h"
 #include <algorithm>
-#include <iostream>
 
-const float DEATH_BORDER = 900.0f;
-const float VICTORY_BORDER = 1000.0f;
+const float DEATH_BORDER = 800.0f;
+const float VICTORY_BORDER = 7200.0f;
 
 const int WINDOW_WIDTH = 800;
 const int WINDOW_HEIGHT = 600;
@@ -55,9 +54,22 @@ void Level::Draw(sf::RenderWindow& window) {
     m_player.Draw(window);
 }
 
-GameState Level::HandleLevelStateChange() {
+int Level::GetId() {
+    return m_id;
+}
+
+GameState Level::HandleLevelStateChange(int& lastOpenedLevel) {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape)) {
         return menuState;
+    }
+
+    sf::Vector2f position = m_player.GetPosition();
+
+    if (position.x > VICTORY_BORDER) {
+        lastOpenedLevel++;
+        return victoryState;
+    } else if (position.y > DEATH_BORDER) {
+        return defeatState;
     }
 
     return levelState;

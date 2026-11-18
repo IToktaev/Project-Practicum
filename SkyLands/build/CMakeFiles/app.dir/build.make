@@ -131,56 +131,71 @@ CMakeFiles/app.dir/src/Map/Map.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/Map/Map.cpp.s"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\PP\SkyLands\src\Map\Map.cpp -o CMakeFiles\app.dir\src\Map\Map.cpp.s
 
-CMakeFiles/app.dir/src/Level/Level.cpp.obj: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/src/Level/Level.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
-CMakeFiles/app.dir/src/Level/Level.cpp.obj: C:/PP/SkyLands/src/Level/Level.cpp
-CMakeFiles/app.dir/src/Level/Level.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\PP\Skylands\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/app.dir/src/Level/Level.cpp.obj"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/Level/Level.cpp.obj -MF CMakeFiles\app.dir\src\Level\Level.cpp.obj.d -o CMakeFiles\app.dir\src\Level\Level.cpp.obj -c C:\PP\SkyLands\src\Level\Level.cpp
+CMakeFiles/app.dir/src/Displays/Level/Level.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/src/Displays/Level/Level.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
+CMakeFiles/app.dir/src/Displays/Level/Level.cpp.obj: C:/PP/SkyLands/src/Displays/Level/Level.cpp
+CMakeFiles/app.dir/src/Displays/Level/Level.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\PP\Skylands\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/app.dir/src/Displays/Level/Level.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/Displays/Level/Level.cpp.obj -MF CMakeFiles\app.dir\src\Displays\Level\Level.cpp.obj.d -o CMakeFiles\app.dir\src\Displays\Level\Level.cpp.obj -c C:\PP\SkyLands\src\Displays\Level\Level.cpp
 
-CMakeFiles/app.dir/src/Level/Level.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/src/Level/Level.cpp.i"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\PP\SkyLands\src\Level\Level.cpp > CMakeFiles\app.dir\src\Level\Level.cpp.i
+CMakeFiles/app.dir/src/Displays/Level/Level.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/src/Displays/Level/Level.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\PP\SkyLands\src\Displays\Level\Level.cpp > CMakeFiles\app.dir\src\Displays\Level\Level.cpp.i
 
-CMakeFiles/app.dir/src/Level/Level.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/Level/Level.cpp.s"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\PP\SkyLands\src\Level\Level.cpp -o CMakeFiles\app.dir\src\Level\Level.cpp.s
+CMakeFiles/app.dir/src/Displays/Level/Level.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/Displays/Level/Level.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\PP\SkyLands\src\Displays\Level\Level.cpp -o CMakeFiles\app.dir\src\Displays\Level\Level.cpp.s
 
-CMakeFiles/app.dir/src/Menu/Menu.cpp.obj: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/src/Menu/Menu.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
-CMakeFiles/app.dir/src/Menu/Menu.cpp.obj: C:/PP/SkyLands/src/Menu/Menu.cpp
-CMakeFiles/app.dir/src/Menu/Menu.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\PP\Skylands\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/app.dir/src/Menu/Menu.cpp.obj"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/Menu/Menu.cpp.obj -MF CMakeFiles\app.dir\src\Menu\Menu.cpp.obj.d -o CMakeFiles\app.dir\src\Menu\Menu.cpp.obj -c C:\PP\SkyLands\src\Menu\Menu.cpp
+CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
+CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.obj: C:/PP/SkyLands/src/Displays/Menu/Menu.cpp
+CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\PP\Skylands\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.obj -MF CMakeFiles\app.dir\src\Displays\Menu\Menu.cpp.obj.d -o CMakeFiles\app.dir\src\Displays\Menu\Menu.cpp.obj -c C:\PP\SkyLands\src\Displays\Menu\Menu.cpp
 
-CMakeFiles/app.dir/src/Menu/Menu.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/src/Menu/Menu.cpp.i"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\PP\SkyLands\src\Menu\Menu.cpp > CMakeFiles\app.dir\src\Menu\Menu.cpp.i
+CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\PP\SkyLands\src\Displays\Menu\Menu.cpp > CMakeFiles\app.dir\src\Displays\Menu\Menu.cpp.i
 
-CMakeFiles/app.dir/src/Menu/Menu.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/Menu/Menu.cpp.s"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\PP\SkyLands\src\Menu\Menu.cpp -o CMakeFiles\app.dir\src\Menu\Menu.cpp.s
+CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\PP\SkyLands\src\Displays\Menu\Menu.cpp -o CMakeFiles\app.dir\src\Displays\Menu\Menu.cpp.s
 
-CMakeFiles/app.dir/src/Home/Home.cpp.obj: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/src/Home/Home.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
-CMakeFiles/app.dir/src/Home/Home.cpp.obj: C:/PP/SkyLands/src/Home/Home.cpp
-CMakeFiles/app.dir/src/Home/Home.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\PP\Skylands\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/app.dir/src/Home/Home.cpp.obj"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/Home/Home.cpp.obj -MF CMakeFiles\app.dir\src\Home\Home.cpp.obj.d -o CMakeFiles\app.dir\src\Home\Home.cpp.obj -c C:\PP\SkyLands\src\Home\Home.cpp
+CMakeFiles/app.dir/src/Displays/Home/Home.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/src/Displays/Home/Home.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
+CMakeFiles/app.dir/src/Displays/Home/Home.cpp.obj: C:/PP/SkyLands/src/Displays/Home/Home.cpp
+CMakeFiles/app.dir/src/Displays/Home/Home.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\PP\Skylands\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/app.dir/src/Displays/Home/Home.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/Displays/Home/Home.cpp.obj -MF CMakeFiles\app.dir\src\Displays\Home\Home.cpp.obj.d -o CMakeFiles\app.dir\src\Displays\Home\Home.cpp.obj -c C:\PP\SkyLands\src\Displays\Home\Home.cpp
 
-CMakeFiles/app.dir/src/Home/Home.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/src/Home/Home.cpp.i"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\PP\SkyLands\src\Home\Home.cpp > CMakeFiles\app.dir\src\Home\Home.cpp.i
+CMakeFiles/app.dir/src/Displays/Home/Home.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/src/Displays/Home/Home.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\PP\SkyLands\src\Displays\Home\Home.cpp > CMakeFiles\app.dir\src\Displays\Home\Home.cpp.i
 
-CMakeFiles/app.dir/src/Home/Home.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/Home/Home.cpp.s"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\PP\SkyLands\src\Home\Home.cpp -o CMakeFiles\app.dir\src\Home\Home.cpp.s
+CMakeFiles/app.dir/src/Displays/Home/Home.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/Displays/Home/Home.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\PP\SkyLands\src\Displays\Home\Home.cpp -o CMakeFiles\app.dir\src\Displays\Home\Home.cpp.s
+
+CMakeFiles/app.dir/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
+CMakeFiles/app.dir/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.obj: C:/PP/SkyLands/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp
+CMakeFiles/app.dir/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\PP\Skylands\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/app.dir/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.obj -MF CMakeFiles\app.dir\src\Displays\LevelFinalScreen\LevelFinalScreen.cpp.obj.d -o CMakeFiles\app.dir\src\Displays\LevelFinalScreen\LevelFinalScreen.cpp.obj -c C:\PP\SkyLands\src\Displays\LevelFinalScreen\LevelFinalScreen.cpp
+
+CMakeFiles/app.dir/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\PP\SkyLands\src\Displays\LevelFinalScreen\LevelFinalScreen.cpp > CMakeFiles\app.dir\src\Displays\LevelFinalScreen\LevelFinalScreen.cpp.i
+
+CMakeFiles/app.dir/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\PP\SkyLands\src\Displays\LevelFinalScreen\LevelFinalScreen.cpp -o CMakeFiles\app.dir\src\Displays\LevelFinalScreen\LevelFinalScreen.cpp.s
 
 CMakeFiles/app.dir/src/Utils/DrawImage.cpp.obj: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/src/Utils/DrawImage.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
 CMakeFiles/app.dir/src/Utils/DrawImage.cpp.obj: C:/PP/SkyLands/src/Utils/DrawImage.cpp
 CMakeFiles/app.dir/src/Utils/DrawImage.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\PP\Skylands\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/app.dir/src/Utils/DrawImage.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\PP\Skylands\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/app.dir/src/Utils/DrawImage.cpp.obj"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/Utils/DrawImage.cpp.obj -MF CMakeFiles\app.dir\src\Utils\DrawImage.cpp.obj.d -o CMakeFiles\app.dir\src\Utils\DrawImage.cpp.obj -c C:\PP\SkyLands\src\Utils\DrawImage.cpp
 
 CMakeFiles/app.dir/src/Utils/DrawImage.cpp.i: cmake_force
@@ -197,9 +212,10 @@ app_OBJECTS = \
 "CMakeFiles/app.dir/src/Player/Player.cpp.obj" \
 "CMakeFiles/app.dir/src/Game/Game.cpp.obj" \
 "CMakeFiles/app.dir/src/Map/Map.cpp.obj" \
-"CMakeFiles/app.dir/src/Level/Level.cpp.obj" \
-"CMakeFiles/app.dir/src/Menu/Menu.cpp.obj" \
-"CMakeFiles/app.dir/src/Home/Home.cpp.obj" \
+"CMakeFiles/app.dir/src/Displays/Level/Level.cpp.obj" \
+"CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.obj" \
+"CMakeFiles/app.dir/src/Displays/Home/Home.cpp.obj" \
+"CMakeFiles/app.dir/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.obj" \
 "CMakeFiles/app.dir/src/Utils/DrawImage.cpp.obj"
 
 # External object files for target app
@@ -209,9 +225,10 @@ app.exe: CMakeFiles/app.dir/src/main.cpp.obj
 app.exe: CMakeFiles/app.dir/src/Player/Player.cpp.obj
 app.exe: CMakeFiles/app.dir/src/Game/Game.cpp.obj
 app.exe: CMakeFiles/app.dir/src/Map/Map.cpp.obj
-app.exe: CMakeFiles/app.dir/src/Level/Level.cpp.obj
-app.exe: CMakeFiles/app.dir/src/Menu/Menu.cpp.obj
-app.exe: CMakeFiles/app.dir/src/Home/Home.cpp.obj
+app.exe: CMakeFiles/app.dir/src/Displays/Level/Level.cpp.obj
+app.exe: CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.obj
+app.exe: CMakeFiles/app.dir/src/Displays/Home/Home.cpp.obj
+app.exe: CMakeFiles/app.dir/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.obj
 app.exe: CMakeFiles/app.dir/src/Utils/DrawImage.cpp.obj
 app.exe: CMakeFiles/app.dir/build.make
 app.exe: C:/SFML/lib/libsfml-graphics-d.a
@@ -220,7 +237,7 @@ app.exe: C:/SFML/lib/libsfml-system-d.a
 app.exe: CMakeFiles/app.dir/linkLibs.rsp
 app.exe: CMakeFiles/app.dir/objects1.rsp
 app.exe: CMakeFiles/app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\PP\Skylands\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable app.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\PP\Skylands\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable app.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\app.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

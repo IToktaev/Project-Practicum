@@ -15,20 +15,25 @@ add_executable(app
     src/Player/Player.cpp
     src/Game/Game.cpp
     src/Map/Map.cpp
-    src/Level/Level.cpp
-    src/Menu/Menu.cpp
-    src/Home/Home.cpp
+    src/Displays/Level/Level.cpp
+    src/Displays/Menu/Menu.cpp
+    src/Displays/Home/Home.cpp
+    src/Displays/LevelFinalScreen/LevelFinalScreen.cpp
     src/Utils/DrawImage.cpp
+    src/Animator.cpp
 )
 
 target_include_directories(app PRIVATE 
     src/Player
     src/Game
     src/Map
-    src/Level
-    src/Menu
-    src/Home
+    src/Displays/Level
+    src/Displays/Menu
+    src/Displays/Home
+    srs/Displays/LevelFinalScreen
     src/Utils
+    src/GlobalConstants
+    src/Animator
 )
 
 target_link_libraries(app PRIVATE

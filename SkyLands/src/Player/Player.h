@@ -7,7 +7,7 @@ class Player {
 public:
     Player();
 
-    void Update(float dt, sf::Vector2f tileSetSize, Map map);
+    void Update(float dt, sf::Vector2f tileSetSize, Map& map);
     void Draw(sf::RenderWindow& window);
 
     sf::Vector2f GetPosition() { return m_sprite.getPosition(); }

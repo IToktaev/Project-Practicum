@@ -229,7 +229,7 @@ void Player::Draw(sf::RenderWindow& window) {
     // window.draw(debugRect);
 }
 
-void Player::Update(float dt, sf::Vector2f tileSetSize, Map map) {
+void Player::Update(float dt, sf::Vector2f tileSetSize, Map& map) {
     sf::FloatRect hitbox = GetHitbox();
 
     CountMove(dt, m_velocity, m_sprite);

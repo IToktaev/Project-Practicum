@@ -128,6 +128,102 @@ app/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/build
 .PHONY : app/fast
 
+src/Displays/Home/Home.obj: src/Displays/Home/Home.cpp.obj
+.PHONY : src/Displays/Home/Home.obj
+
+# target to build an object file
+src/Displays/Home/Home.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Displays/Home/Home.cpp.obj
+.PHONY : src/Displays/Home/Home.cpp.obj
+
+src/Displays/Home/Home.i: src/Displays/Home/Home.cpp.i
+.PHONY : src/Displays/Home/Home.i
+
+# target to preprocess a source file
+src/Displays/Home/Home.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Displays/Home/Home.cpp.i
+.PHONY : src/Displays/Home/Home.cpp.i
+
+src/Displays/Home/Home.s: src/Displays/Home/Home.cpp.s
+.PHONY : src/Displays/Home/Home.s
+
+# target to generate assembly for a file
+src/Displays/Home/Home.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Displays/Home/Home.cpp.s
+.PHONY : src/Displays/Home/Home.cpp.s
+
+src/Displays/Level/Level.obj: src/Displays/Level/Level.cpp.obj
+.PHONY : src/Displays/Level/Level.obj
+
+# target to build an object file
+src/Displays/Level/Level.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Displays/Level/Level.cpp.obj
+.PHONY : src/Displays/Level/Level.cpp.obj
+
+src/Displays/Level/Level.i: src/Displays/Level/Level.cpp.i
+.PHONY : src/Displays/Level/Level.i
+
+# target to preprocess a source file
+src/Displays/Level/Level.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Displays/Level/Level.cpp.i
+.PHONY : src/Displays/Level/Level.cpp.i
+
+src/Displays/Level/Level.s: src/Displays/Level/Level.cpp.s
+.PHONY : src/Displays/Level/Level.s
+
+# target to generate assembly for a file
+src/Displays/Level/Level.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Displays/Level/Level.cpp.s
+.PHONY : src/Displays/Level/Level.cpp.s
+
+src/Displays/LevelFinalScreen/LevelFinalScreen.obj: src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.obj
+.PHONY : src/Displays/LevelFinalScreen/LevelFinalScreen.obj
+
+# target to build an object file
+src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.obj
+.PHONY : src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.obj
+
+src/Displays/LevelFinalScreen/LevelFinalScreen.i: src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.i
+.PHONY : src/Displays/LevelFinalScreen/LevelFinalScreen.i
+
+# target to preprocess a source file
+src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.i
+.PHONY : src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.i
+
+src/Displays/LevelFinalScreen/LevelFinalScreen.s: src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.s
+.PHONY : src/Displays/LevelFinalScreen/LevelFinalScreen.s
+
+# target to generate assembly for a file
+src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.s
+.PHONY : src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.s
+
+src/Displays/Menu/Menu.obj: src/Displays/Menu/Menu.cpp.obj
+.PHONY : src/Displays/Menu/Menu.obj
+
+# target to build an object file
+src/Displays/Menu/Menu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.obj
+.PHONY : src/Displays/Menu/Menu.cpp.obj
+
+src/Displays/Menu/Menu.i: src/Displays/Menu/Menu.cpp.i
+.PHONY : src/Displays/Menu/Menu.i
+
+# target to preprocess a source file
+src/Displays/Menu/Menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.i
+.PHONY : src/Displays/Menu/Menu.cpp.i
+
+src/Displays/Menu/Menu.s: src/Displays/Menu/Menu.cpp.s
+.PHONY : src/Displays/Menu/Menu.s
+
+# target to generate assembly for a file
+src/Displays/Menu/Menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.s
+.PHONY : src/Displays/Menu/Menu.cpp.s
+
 src/Game/Game.obj: src/Game/Game.cpp.obj
 .PHONY : src/Game/Game.obj
 
@@ -152,54 +248,6 @@ src/Game/Game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Game/Game.cpp.s
 .PHONY : src/Game/Game.cpp.s
 
-src/Home/Home.obj: src/Home/Home.cpp.obj
-.PHONY : src/Home/Home.obj
-
-# target to build an object file
-src/Home/Home.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Home/Home.cpp.obj
-.PHONY : src/Home/Home.cpp.obj
-
-src/Home/Home.i: src/Home/Home.cpp.i
-.PHONY : src/Home/Home.i
-
-# target to preprocess a source file
-src/Home/Home.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Home/Home.cpp.i
-.PHONY : src/Home/Home.cpp.i
-
-src/Home/Home.s: src/Home/Home.cpp.s
-.PHONY : src/Home/Home.s
-
-# target to generate assembly for a file
-src/Home/Home.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Home/Home.cpp.s
-.PHONY : src/Home/Home.cpp.s
-
-src/Level/Level.obj: src/Level/Level.cpp.obj
-.PHONY : src/Level/Level.obj
-
-# target to build an object file
-src/Level/Level.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Level/Level.cpp.obj
-.PHONY : src/Level/Level.cpp.obj
-
-src/Level/Level.i: src/Level/Level.cpp.i
-.PHONY : src/Level/Level.i
-
-# target to preprocess a source file
-src/Level/Level.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Level/Level.cpp.i
-.PHONY : src/Level/Level.cpp.i
-
-src/Level/Level.s: src/Level/Level.cpp.s
-.PHONY : src/Level/Level.s
-
-# target to generate assembly for a file
-src/Level/Level.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Level/Level.cpp.s
-.PHONY : src/Level/Level.cpp.s
-
 src/Map/Map.obj: src/Map/Map.cpp.obj
 .PHONY : src/Map/Map.obj
 
@@ -223,30 +271,6 @@ src/Map/Map.s: src/Map/Map.cpp.s
 src/Map/Map.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Map/Map.cpp.s
 .PHONY : src/Map/Map.cpp.s
-
-src/Menu/Menu.obj: src/Menu/Menu.cpp.obj
-.PHONY : src/Menu/Menu.obj
-
-# target to build an object file
-src/Menu/Menu.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Menu/Menu.cpp.obj
-.PHONY : src/Menu/Menu.cpp.obj
-
-src/Menu/Menu.i: src/Menu/Menu.cpp.i
-.PHONY : src/Menu/Menu.i
-
-# target to preprocess a source file
-src/Menu/Menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Menu/Menu.cpp.i
-.PHONY : src/Menu/Menu.cpp.i
-
-src/Menu/Menu.s: src/Menu/Menu.cpp.s
-.PHONY : src/Menu/Menu.s
-
-# target to generate assembly for a file
-src/Menu/Menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Menu/Menu.cpp.s
-.PHONY : src/Menu/Menu.cpp.s
 
 src/Player/Player.obj: src/Player/Player.cpp.obj
 .PHONY : src/Player/Player.obj
@@ -329,21 +353,24 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... app
+	@echo ... src/Displays/Home/Home.obj
+	@echo ... src/Displays/Home/Home.i
+	@echo ... src/Displays/Home/Home.s
+	@echo ... src/Displays/Level/Level.obj
+	@echo ... src/Displays/Level/Level.i
+	@echo ... src/Displays/Level/Level.s
+	@echo ... src/Displays/LevelFinalScreen/LevelFinalScreen.obj
+	@echo ... src/Displays/LevelFinalScreen/LevelFinalScreen.i
+	@echo ... src/Displays/LevelFinalScreen/LevelFinalScreen.s
+	@echo ... src/Displays/Menu/Menu.obj
+	@echo ... src/Displays/Menu/Menu.i
+	@echo ... src/Displays/Menu/Menu.s
 	@echo ... src/Game/Game.obj
 	@echo ... src/Game/Game.i
 	@echo ... src/Game/Game.s
-	@echo ... src/Home/Home.obj
-	@echo ... src/Home/Home.i
-	@echo ... src/Home/Home.s
-	@echo ... src/Level/Level.obj
-	@echo ... src/Level/Level.i
-	@echo ... src/Level/Level.s
 	@echo ... src/Map/Map.obj
 	@echo ... src/Map/Map.i
 	@echo ... src/Map/Map.s
-	@echo ... src/Menu/Menu.obj
-	@echo ... src/Menu/Menu.i
-	@echo ... src/Menu/Menu.s
 	@echo ... src/Player/Player.obj
 	@echo ... src/Player/Player.i
 	@echo ... src/Player/Player.s

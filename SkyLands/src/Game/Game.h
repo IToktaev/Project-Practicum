@@ -1,11 +1,8 @@
 #pragma once
-#include <SFML/Graphics.hpp>
-#include "../Player/Player.h"
-#include "../Map/Map.h"
 #include "../Level/Level.h"
 #include "../Menu/Menu.h"
-#include "GameState.h"
 #include "../Home/Home.h"
+#include "../Displays/LevelFinalScreen/LevelFinalScreen.h"
 
 class Game {
     public: 
@@ -19,6 +16,9 @@ class Game {
         Level m_level;
         Menu m_menu;
         Home m_home;
+        LevelFinalScreen m_levelFinalScreen;
 
         GameState m_currentState;
+
+        int m_currentOpenedLevel;
 };

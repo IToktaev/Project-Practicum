@@ -24,5 +24,5 @@ class Level {
 
         int GetId();
 
-        GameState HandleLevelStateChange();
+        GameState HandleLevelStateChange(int& lastOpenedLevel);
 };

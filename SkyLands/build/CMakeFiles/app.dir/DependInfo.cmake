@@ -8,11 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/PP/SkyLands/src/Displays/Home/Home.cpp" "CMakeFiles/app.dir/src/Displays/Home/Home.cpp.obj" "gcc" "CMakeFiles/app.dir/src/Displays/Home/Home.cpp.obj.d"
+  "C:/PP/SkyLands/src/Displays/Level/Level.cpp" "CMakeFiles/app.dir/src/Displays/Level/Level.cpp.obj" "gcc" "CMakeFiles/app.dir/src/Displays/Level/Level.cpp.obj.d"
+  "C:/PP/SkyLands/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp" "CMakeFiles/app.dir/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.obj" "gcc" "CMakeFiles/app.dir/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.obj.d"
+  "C:/PP/SkyLands/src/Displays/Menu/Menu.cpp" "CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.obj" "gcc" "CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.obj.d"
   "C:/PP/SkyLands/src/Game/Game.cpp" "CMakeFiles/app.dir/src/Game/Game.cpp.obj" "gcc" "CMakeFiles/app.dir/src/Game/Game.cpp.obj.d"
-  "C:/PP/SkyLands/src/Home/Home.cpp" "CMakeFiles/app.dir/src/Home/Home.cpp.obj" "gcc" "CMakeFiles/app.dir/src/Home/Home.cpp.obj.d"
-  "C:/PP/SkyLands/src/Level/Level.cpp" "CMakeFiles/app.dir/src/Level/Level.cpp.obj" "gcc" "CMakeFiles/app.dir/src/Level/Level.cpp.obj.d"
   "C:/PP/SkyLands/src/Map/Map.cpp" "CMakeFiles/app.dir/src/Map/Map.cpp.obj" "gcc" "CMakeFiles/app.dir/src/Map/Map.cpp.obj.d"
-  "C:/PP/SkyLands/src/Menu/Menu.cpp" "CMakeFiles/app.dir/src/Menu/Menu.cpp.obj" "gcc" "CMakeFiles/app.dir/src/Menu/Menu.cpp.obj.d"
   "C:/PP/SkyLands/src/Player/Player.cpp" "CMakeFiles/app.dir/src/Player/Player.cpp.obj" "gcc" "CMakeFiles/app.dir/src/Player/Player.cpp.obj.d"
   "C:/PP/SkyLands/src/Utils/DrawImage.cpp" "CMakeFiles/app.dir/src/Utils/DrawImage.cpp.obj" "gcc" "CMakeFiles/app.dir/src/Utils/DrawImage.cpp.obj.d"
   "C:/PP/SkyLands/src/main.cpp" "CMakeFiles/app.dir/src/main.cpp.obj" "gcc" "CMakeFiles/app.dir/src/main.cpp.obj.d"

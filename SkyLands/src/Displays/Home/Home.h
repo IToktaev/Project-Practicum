@@ -5,13 +5,14 @@ class Home {
     public:
         Home();
 
-        void RenderHome(sf::RenderWindow& window);
+        void RenderHome(sf::RenderWindow& window, int lastOpenedLevel);
 
         GameState HandleHomeStateChange(
             const sf::Event::MouseButtonPressed* mousePressed, 
             sf::RenderWindow* window,
             GameState currentState,
-            Level& level
+            Level& level,
+            int lastOpenedLevel
         );
 
     private:
@@ -19,9 +20,14 @@ class Home {
         sf::Texture m_levelFirstIconTexture;
         sf::Texture m_levelSecondIconTexture;
         sf::Texture m_levelThirdIconTexture;
+        sf::Texture m_chainsLightTexture;
+        sf::Texture m_chainsDarkTexture;
 
         sf::Sprite m_background;
         sf::Sprite m_levelFirstIcon;
         sf::Sprite m_levelSecondIcon;
         sf::Sprite m_levelThirdIcon;
+
+        sf::Sprite m_secondIconLocked;
+        sf::Sprite m_thirdIconLocked;
 };

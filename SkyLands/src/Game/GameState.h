@@ -1,9 +1,10 @@
 #pragma once
+#include <cstdint>
 
-enum GameState {
+enum GameState : uint8_t {
     homeState,
     levelState,
     menuState,
-    deathState,
-    victoryState
+    victoryState,
+    defeatState
 };
