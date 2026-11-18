@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/app.dir/src/Animator/Animator.cpp.obj"
+  "CMakeFiles/app.dir/src/Animator/Animator.cpp.obj.d"
   "CMakeFiles/app.dir/src/Displays/Home/Home.cpp.obj"
   "CMakeFiles/app.dir/src/Displays/Home/Home.cpp.obj.d"
   "CMakeFiles/app.dir/src/Displays/Level/Level.cpp.obj"
@@ -13,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/app.dir/src/Map/Map.cpp.obj.d"
   "CMakeFiles/app.dir/src/Player/Player.cpp.obj"
   "CMakeFiles/app.dir/src/Player/Player.cpp.obj.d"
+  "CMakeFiles/app.dir/src/Sound/Sound.cpp.obj"
+  "CMakeFiles/app.dir/src/Sound/Sound.cpp.obj.d"
   "CMakeFiles/app.dir/src/Utils/DrawImage.cpp.obj"
   "CMakeFiles/app.dir/src/Utils/DrawImage.cpp.obj.d"
   "CMakeFiles/app.dir/src/main.cpp.obj"

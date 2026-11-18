@@ -9,6 +9,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_PREFIX_PATH "C:/SFML")
 
 find_package(SFML 3 CONFIG REQUIRED COMPONENTS Graphics Window System)
+find_package(SFML 3 CONFIG REQUIRED COMPONENTS Graphics Window System Audio)
 
 add_executable(app
     src/main.cpp
@@ -20,7 +21,8 @@ add_executable(app
     src/Displays/Home/Home.cpp
     src/Displays/LevelFinalScreen/LevelFinalScreen.cpp
     src/Utils/DrawImage.cpp
-    src/Animator.cpp
+    src/Animator/Animator.cpp
+    src/Sound/Sound.cpp
 )
 
 target_include_directories(app PRIVATE 
@@ -34,8 +36,10 @@ target_include_directories(app PRIVATE
     src/Utils
     src/GlobalConstants
     src/Animator
+    src/Sound
 )
 
 target_link_libraries(app PRIVATE
     SFML::Graphics
+    SFML::Audio
 )

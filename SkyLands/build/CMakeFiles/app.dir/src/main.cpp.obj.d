@@ -301,7 +301,29 @@ CMakeFiles/app.dir/src/main.cpp.obj: C:\PP\SkyLands\src\main.cpp \
  C:/SFML/include/SFML/System/Sleep.hpp \
  C:/SFML/include/SFML/System/TimeoutWithPredicate.hpp \
  C:/SFML/include/SFML/System/Version.hpp \
- C:/PP/SkyLands/src/Map/TileType.h C:/PP/SkyLands/src/Game/GameState.h \
+ C:/PP/SkyLands/src/Map/TileType.h C:/PP/SkyLands/src/Animator/Animator.h \
+ C:/PP/SkyLands/src/Sound/Sound.h C:/SFML/include/SFML/Audio.hpp \
+ C:/SFML/include/SFML/Audio/InputSoundFile.hpp \
+ C:/SFML/include/SFML/Audio/Export.hpp \
+ C:/SFML/include/SFML/Audio/SoundFileReader.hpp \
+ C:/SFML/include/SFML/Audio/SoundChannel.hpp \
+ C:/SFML/include/SFML/Audio/Listener.hpp \
+ C:/SFML/include/SFML/Audio/Music.hpp \
+ C:/SFML/include/SFML/Audio/SoundStream.hpp \
+ C:/SFML/include/SFML/Audio/SoundSource.hpp \
+ C:/SFML/include/SFML/Audio/AudioResource.hpp \
+ C:/SFML/include/SFML/Audio/OutputSoundFile.hpp \
+ C:/SFML/include/SFML/Audio/SoundFileWriter.hpp \
+ C:/SFML/include/SFML/Audio/PlaybackDevice.hpp \
+ C:/SFML/include/SFML/Audio/Sound.hpp \
+ C:/SFML/include/SFML/Audio/SoundBuffer.hpp \
+ C:/msys64/ucrt64/include/c++/15.2.0/unordered_set \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/unordered_set.h \
+ C:/SFML/include/SFML/Audio/SoundBufferRecorder.hpp \
+ C:/SFML/include/SFML/Audio/SoundRecorder.hpp \
+ C:/SFML/include/SFML/Audio/SoundFileFactory.hpp \
+ C:/SFML/include/SFML/Audio/SoundFileFactory.inl \
+ C:/PP/SkyLands/src/Game/GameState.h \
  C:/PP/SkyLands/src/Displays/Menu/Menu.h \
  C:/PP/SkyLands/src/Displays/Home/Home.h \
  C:/PP/SkyLands/src/Displays/LevelFinalScreen/LevelFinalScreen.h

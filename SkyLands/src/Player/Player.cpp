@@ -16,26 +16,69 @@ const float JUMP_CHARGE_SPEED = 800.0f;
 const float MAX_JUMP_CHARGE_TIME = 0.25f;
 
 const float MIN_VELOCITY_TO_ROTATE = 10.0f;
-const float PLAYER_SCALE = 0.025f; 
-
-const int TEXTURE_SIZE = 4000;
+const float PLAYER_SCALE = 0.5f; 
 
 const float EPSILON = 0.001f;
 
 const float HITBOX_X_SCALE_FACTOR = 0.6;
 
+const float RUN_DURATION = 0.2f;
+const float BASE_DURATION = 0.1f;
+
 Player::Player()
-    :m_sprite(m_texture)       
+    : m_sprite(m_texture),
+      m_animator(m_sprite),
+      m_currentAnimation(AnimationState::Idle)  
 {
-    if (!m_texture.loadFromFile("../assets/hero.png")) {
+    if (!m_texture.loadFromFile("../assets/hero_atlas.png")) {
         std::cerr << "Load error!\n";
     }
 
     m_sprite.setTexture(m_texture);
-    m_sprite.setTextureRect({
-        {0, 0},
-        {TEXTURE_SIZE, TEXTURE_SIZE}
-    });
+    SetIdleAnimation();
+
+    m_runSound.LoadFromFile("../assets/sounds/run.wav");
+}
+
+void Player::SetRunAnimation() {
+    m_animator.SetAnimation({
+        sf::IntRect({0, 420}, {220, 210}),
+        sf::IntRect({420, 420}, {220, 210}),
+    }, RUN_DURATION);
+}
+
+void Player::SetIdleAnimation() {
+    m_animator.SetAnimation({
+        sf::IntRect({0, 0}, {220, 210})
+    }, BASE_DURATION);
+}
+
+void Player::SetJumpAnimation() {
+    m_animator.SetAnimation({
+        sf::IntRect({420, 640}, {220, 210})
+    }, BASE_DURATION);
+}
+
+void Player::ChangeAnimation(AnimationState newState) {
+    if (m_currentAnimation == newState) {
+        return;
+    }
+
+    m_currentAnimation = newState;
+
+    switch (newState) {
+        case AnimationState::Idle:
+            SetIdleAnimation();
+            break;
+
+        case AnimationState::Run:
+            SetRunAnimation();
+            break;
+
+        case AnimationState::Jump:
+            SetJumpAnimation();
+            break;
+    }
 }
 
 void Player::CountMove(float dt, sf::Vector2f& velocity, sf::Sprite& sprite) {
@@ -77,7 +120,6 @@ void Player::CountJump(
     float& jumpChargeTime
 ) {
     bool jumpPressed = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space);
-
     if (isGrounded && jumpPressed && !isJumping) {
         jumpForce = MIN_JUMP_FORCE;
         jumpChargeTime = 0.0f;
@@ -155,15 +197,24 @@ void Player::MoveX(float dt, const Map& map) {
             }
 
             if (m_velocity.x > 0.0f) {
-                m_sprite.setPosition({
-                    tileX - hitbox.size.x / 2.0f - EPSILON,
-                    m_sprite.getPosition().y
-                });
+                if (hitbox.position.x + hitbox.size.x > tileX &&
+                    hitbox.position.x < tileX
+                ) {
+                    float overlap = hitbox.position.x + hitbox.size.x - tileX;
+                    m_sprite.move({-overlap - EPSILON, 0.0f});
+                    m_velocity.x = 0.0f;
+                    return;
+                }
             } else if (m_velocity.x < 0.0f) {
-                m_sprite.setPosition({
-                    tileX + TILE_SIZE + hitbox.size.x / 2.0f + EPSILON,
-                    m_sprite.getPosition().y
-                });
+                if (hitbox.position.x < tileX + TILE_SIZE &&
+                    hitbox.position.x + hitbox.size.x > tileX + TILE_SIZE
+                ) {
+
+                    float overlap = tileX + TILE_SIZE - hitbox.position.x;
+                    m_sprite.move({overlap + EPSILON, 0.0f});
+                    m_velocity.x = 0.0f;
+                    return;
+                }
             }
 
             m_velocity.x = 0.0f;
@@ -194,17 +245,12 @@ void Player::MoveY(float dt, const Map& map) {
             }
 
             if (m_velocity.y > 0.0f) {
-                m_sprite.setPosition({
-                    m_sprite.getPosition().x,
-                    tileY - bounds.size.y / 2.0f - EPSILON
-                });
-
+                float overlap = bounds.position.y + bounds.size.y - tileY;
+                m_sprite.move({0.0f, -overlap - EPSILON});
                 m_isGrounded = true;
             } else if (m_velocity.y < 0.0f) {
-                m_sprite.setPosition({
-                    m_sprite.getPosition().x,
-                    tileY + TILE_SIZE + bounds.size.y / 2.0f + EPSILON
-                });
+                float overlap = tileY + TILE_SIZE - bounds.position.y;
+                m_sprite.move({0.0f, overlap + EPSILON});
             }
 
             m_velocity.y = 0.0f;
@@ -230,13 +276,26 @@ void Player::Draw(sf::RenderWindow& window) {
 }
 
 void Player::Update(float dt, sf::Vector2f tileSetSize, Map& map) {
-    sf::FloatRect hitbox = GetHitbox();
-
     CountMove(dt, m_velocity, m_sprite);
     MoveX(dt, map);
     MoveY(dt, map);
 
-    ResolveCollisions(m_sprite, hitbox, m_velocity, tileSetSize);    
+    if (!m_isGrounded) {
+        ChangeAnimation(AnimationState::Jump);
+        m_runSound.Stop();
+    } else if (m_velocity.x != 0) {
+        ChangeAnimation(AnimationState::Run);
+        if (m_runSound.GetStatus() != sf::Sound::Status::Playing) {
+            m_runSound.Play();
+        }
+    } else {
+        ChangeAnimation(AnimationState::Idle);
+        m_runSound.Stop();
+    }
+    
+    m_animator.Update(dt);
+
+    ResolveCollisions(m_sprite, GetHitbox(), m_velocity, tileSetSize);  
 
     CountJump(dt, m_velocity, m_isGrounded, m_jumpForce, m_isJumping, m_jumpChargeTime);
 }
@@ -251,5 +310,6 @@ void Player::Init() {
     m_jumpForce = MIN_JUMP_FORCE;
     m_isGrounded = false;
     m_isJumping = false;
-}
 
+    SetIdleAnimation();
+}

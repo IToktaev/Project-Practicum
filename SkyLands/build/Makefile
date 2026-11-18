@@ -128,6 +128,30 @@ app/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/build
 .PHONY : app/fast
 
+src/Animator/Animator.obj: src/Animator/Animator.cpp.obj
+.PHONY : src/Animator/Animator.obj
+
+# target to build an object file
+src/Animator/Animator.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Animator/Animator.cpp.obj
+.PHONY : src/Animator/Animator.cpp.obj
+
+src/Animator/Animator.i: src/Animator/Animator.cpp.i
+.PHONY : src/Animator/Animator.i
+
+# target to preprocess a source file
+src/Animator/Animator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Animator/Animator.cpp.i
+.PHONY : src/Animator/Animator.cpp.i
+
+src/Animator/Animator.s: src/Animator/Animator.cpp.s
+.PHONY : src/Animator/Animator.s
+
+# target to generate assembly for a file
+src/Animator/Animator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Animator/Animator.cpp.s
+.PHONY : src/Animator/Animator.cpp.s
+
 src/Displays/Home/Home.obj: src/Displays/Home/Home.cpp.obj
 .PHONY : src/Displays/Home/Home.obj
 
@@ -296,6 +320,30 @@ src/Player/Player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Player/Player.cpp.s
 .PHONY : src/Player/Player.cpp.s
 
+src/Sound/Sound.obj: src/Sound/Sound.cpp.obj
+.PHONY : src/Sound/Sound.obj
+
+# target to build an object file
+src/Sound/Sound.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Sound/Sound.cpp.obj
+.PHONY : src/Sound/Sound.cpp.obj
+
+src/Sound/Sound.i: src/Sound/Sound.cpp.i
+.PHONY : src/Sound/Sound.i
+
+# target to preprocess a source file
+src/Sound/Sound.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Sound/Sound.cpp.i
+.PHONY : src/Sound/Sound.cpp.i
+
+src/Sound/Sound.s: src/Sound/Sound.cpp.s
+.PHONY : src/Sound/Sound.s
+
+# target to generate assembly for a file
+src/Sound/Sound.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Sound/Sound.cpp.s
+.PHONY : src/Sound/Sound.cpp.s
+
 src/Utils/DrawImage.obj: src/Utils/DrawImage.cpp.obj
 .PHONY : src/Utils/DrawImage.obj
 
@@ -353,6 +401,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... app
+	@echo ... src/Animator/Animator.obj
+	@echo ... src/Animator/Animator.i
+	@echo ... src/Animator/Animator.s
 	@echo ... src/Displays/Home/Home.obj
 	@echo ... src/Displays/Home/Home.i
 	@echo ... src/Displays/Home/Home.s
@@ -374,6 +425,9 @@ help:
 	@echo ... src/Player/Player.obj
 	@echo ... src/Player/Player.i
 	@echo ... src/Player/Player.s
+	@echo ... src/Sound/Sound.obj
+	@echo ... src/Sound/Sound.i
+	@echo ... src/Sound/Sound.s
 	@echo ... src/Utils/DrawImage.obj
 	@echo ... src/Utils/DrawImage.i
 	@echo ... src/Utils/DrawImage.s

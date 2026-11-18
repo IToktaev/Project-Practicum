@@ -35,11 +35,9 @@ void Animator::Update(float dt) {
 
         if (m_currentFrame + 1 < static_cast<int>(m_frames.size())) {
             m_currentFrame++;
-        }
-        else if (m_isLooping) {
+        } else if (m_isLooping) {
             m_currentFrame = 0;
-        }
-        else {
+        } else {
             m_animationTimer = 0.0f;
             return;
         }

@@ -19,7 +19,9 @@ class Menu {
     private:
         sf::Texture m_toHomeButtonTexture;
         sf::Texture m_toLevelButtonTexture;
+        sf::Texture m_gameplayInfoTexture;
 
         sf::Sprite m_toHomeButton;
         sf::Sprite m_toLevelButton;
+        sf::Sprite m_gameplayInfo;
 };
