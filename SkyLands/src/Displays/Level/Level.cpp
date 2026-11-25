@@ -8,12 +8,9 @@ const int WINDOW_WIDTH = 800;
 const int WINDOW_HEIGHT = 600;
 
 Level::Level()
-    : m_view(sf::FloatRect(
-        {0.0f, 0.0f},
-        {WINDOW_WIDTH, WINDOW_HEIGHT}
-    ))
+    : m_view(sf::FloatRect({0.0f, 0.0f}, {WINDOW_WIDTH, WINDOW_HEIGHT})),
+      m_uiView(sf::FloatRect({0.0f, 0.0f}, {WINDOW_WIDTH, WINDOW_HEIGHT}))
 {
-
 }
 
 void Level::Init(int levelId) {
@@ -52,6 +49,11 @@ void Level::Draw(sf::RenderWindow& window) {
 
     m_map.MapDraw(window);
     m_player.Draw(window);
+
+    m_uiView = window.getDefaultView();
+    window.setView(m_uiView);
+
+    m_ui.RenderHealthBar(m_player.GetHealth(), m_player.GetMaxHealth(), window);
 }
 
 int Level::GetId() {

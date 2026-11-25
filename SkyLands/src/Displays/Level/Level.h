@@ -3,13 +3,17 @@
 #include "Player.h"
 #include "Map.h"
 #include "../Game/GameState.h"
+#include "../../UI/UI.h"
 
 class Level {
     private:
         Player m_player;
         Map m_map;
 
+        UI m_ui;
+
         sf::View m_view;
+        sf::View m_uiView;
 
         sf::Vector2f CountCameraPosition();
 

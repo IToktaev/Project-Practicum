@@ -25,10 +25,16 @@ const float HITBOX_X_SCALE_FACTOR = 0.6;
 const float RUN_DURATION = 0.2f;
 const float BASE_DURATION = 0.1f;
 
+const int SPRITE_WIDTH = 220;
+const int SPRITE_HEIGHT = 210;
+
+const int MAX_HEALTHBAR = 10;
+
 Player::Player()
     : m_sprite(m_texture),
       m_animator(m_sprite),
-      m_currentAnimation(AnimationState::Idle)  
+      m_currentAnimation(AnimationState::Idle),  
+      m_healthbar(MAX_HEALTHBAR)
 {
     if (!m_texture.loadFromFile("../assets/hero_atlas.png")) {
         std::cerr << "Load error!\n";
@@ -37,25 +43,36 @@ Player::Player()
     m_sprite.setTexture(m_texture);
     SetIdleAnimation();
 
-    m_runSound.LoadFromFile("../assets/sounds/run.wav");
+    m_runSound.LoadFromFile("../assets/sounds/footstep.wav");
+    m_jumpSound.LoadFromFile("../assets/sounds/jump.wav");
+
+    m_jumpSound.SetVolume(50);
+}
+
+int Player::GetHealth() {
+    return m_healthbar;
+}
+
+int Player::GetMaxHealth() {
+    return MAX_HEALTHBAR;
 }
 
 void Player::SetRunAnimation() {
     m_animator.SetAnimation({
-        sf::IntRect({0, 420}, {220, 210}),
-        sf::IntRect({420, 420}, {220, 210}),
+        sf::IntRect({0, 420}, {SPRITE_WIDTH, SPRITE_HEIGHT}),
+        sf::IntRect({420, 420}, {SPRITE_WIDTH, SPRITE_HEIGHT}),
     }, RUN_DURATION);
 }
 
 void Player::SetIdleAnimation() {
     m_animator.SetAnimation({
-        sf::IntRect({0, 0}, {220, 210})
+        sf::IntRect({0, 0}, {SPRITE_WIDTH, SPRITE_HEIGHT})
     }, BASE_DURATION);
 }
 
 void Player::SetJumpAnimation() {
     m_animator.SetAnimation({
-        sf::IntRect({420, 640}, {220, 210})
+        sf::IntRect({420, 640}, {SPRITE_WIDTH, SPRITE_HEIGHT})
     }, BASE_DURATION);
 }
 
@@ -128,6 +145,8 @@ void Player::CountJump(
 
         isGrounded = false;
         isJumping = true;
+
+        m_jumpSound.Play();
     }
 
     if (isJumping && jumpPressed && jumpChargeTime < MAX_JUMP_CHARGE_TIME) {
@@ -286,17 +305,18 @@ void Player::Update(float dt, sf::Vector2f tileSetSize, Map& map) {
     } else if (m_velocity.x != 0) {
         ChangeAnimation(AnimationState::Run);
         if (m_runSound.GetStatus() != sf::Sound::Status::Playing) {
-            m_runSound.Play();
+            if (m_runSoundClock.getElapsedTime().asMilliseconds() >= 300) {
+                m_runSound.Play();
+                m_runSoundClock.restart();
+            }
         }
     } else {
         ChangeAnimation(AnimationState::Idle);
-        m_runSound.Stop();
     }
     
     m_animator.Update(dt);
 
     ResolveCollisions(m_sprite, GetHitbox(), m_velocity, tileSetSize);  
-
     CountJump(dt, m_velocity, m_isGrounded, m_jumpForce, m_isJumping, m_jumpChargeTime);
 }
 

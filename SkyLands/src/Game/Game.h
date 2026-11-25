@@ -22,3 +22,5 @@ class Game {
 
         int m_currentOpenedLevel;
 };
+
+//здесь будет публичный метод создания пули

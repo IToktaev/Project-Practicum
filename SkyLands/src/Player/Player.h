@@ -12,6 +12,9 @@ public:
     void Update(float dt, sf::Vector2f tileSetSize, Map& map);
     void Draw(sf::RenderWindow& window);
 
+    int GetHealth();
+    int GetMaxHealth();
+
     sf::Vector2f GetPosition() { return m_sprite.getPosition(); }
 
     void Init();
@@ -23,6 +26,8 @@ enum class AnimationState : uint8_t {
 };    
 
 private:
+    int m_healthbar;
+
     sf::Texture m_texture;
     sf::Sprite m_sprite;
     Animator m_animator;
@@ -34,8 +39,11 @@ private:
     float m_jumpChargeTime;
 
     Sound m_runSound;
+    Sound m_jumpSound;
 
     AnimationState m_currentAnimation = AnimationState::Idle;
+
+    sf::Clock m_runSoundClock;
 
     void SetIdleAnimation();
     void SetRunAnimation();

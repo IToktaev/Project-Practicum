@@ -324,7 +324,7 @@ CMakeFiles/app.dir/src/Game/Game.cpp.obj: \
  C:/SFML/include/SFML/Audio/SoundRecorder.hpp \
  C:/SFML/include/SFML/Audio/SoundFileFactory.hpp \
  C:/SFML/include/SFML/Audio/SoundFileFactory.inl \
- C:/PP/SkyLands/src/Game/GameState.h \
+ C:/PP/SkyLands/src/Game/GameState.h C:/PP/SkyLands/src/UI/UI.h \
  C:/PP/SkyLands/src/Displays/Menu/Menu.h \
  C:/PP/SkyLands/src/Displays/Home/Home.h \
  C:/PP/SkyLands/src/Displays/LevelFinalScreen/LevelFinalScreen.h \

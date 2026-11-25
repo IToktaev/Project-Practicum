@@ -1,5 +1,5 @@
-CMakeFiles/app.dir/src/Player/Player.cpp.obj: \
- C:\PP\SkyLands\src\Player\Player.cpp C:\PP\SkyLands\src\Player\Player.h \
+CMakeFiles/app.dir/src/PLayer/Player.cpp.obj: \
+ C:\PP\SkyLands\src\PLayer\Player.cpp C:\PP\SkyLands\src\PLayer\Player.h \
  C:/PP/SkyLands/src/Map/Map.h C:/SFML/include/SFML/Graphics.hpp \
  C:/SFML/include/SFML/Graphics/BlendMode.hpp \
  C:/SFML/include/SFML/Graphics/Export.hpp C:/SFML/include/SFML/Config.hpp \

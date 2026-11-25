@@ -296,29 +296,29 @@ src/Map/Map.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Map/Map.cpp.s
 .PHONY : src/Map/Map.cpp.s
 
-src/Player/Player.obj: src/Player/Player.cpp.obj
-.PHONY : src/Player/Player.obj
+src/PLayer/Player.obj: src/PLayer/Player.cpp.obj
+.PHONY : src/PLayer/Player.obj
 
 # target to build an object file
-src/Player/Player.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Player/Player.cpp.obj
-.PHONY : src/Player/Player.cpp.obj
+src/PLayer/Player.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/PLayer/Player.cpp.obj
+.PHONY : src/PLayer/Player.cpp.obj
 
-src/Player/Player.i: src/Player/Player.cpp.i
-.PHONY : src/Player/Player.i
+src/PLayer/Player.i: src/PLayer/Player.cpp.i
+.PHONY : src/PLayer/Player.i
 
 # target to preprocess a source file
-src/Player/Player.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Player/Player.cpp.i
-.PHONY : src/Player/Player.cpp.i
+src/PLayer/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/PLayer/Player.cpp.i
+.PHONY : src/PLayer/Player.cpp.i
 
-src/Player/Player.s: src/Player/Player.cpp.s
-.PHONY : src/Player/Player.s
+src/PLayer/Player.s: src/PLayer/Player.cpp.s
+.PHONY : src/PLayer/Player.s
 
 # target to generate assembly for a file
-src/Player/Player.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Player/Player.cpp.s
-.PHONY : src/Player/Player.cpp.s
+src/PLayer/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/PLayer/Player.cpp.s
+.PHONY : src/PLayer/Player.cpp.s
 
 src/Sound/Sound.obj: src/Sound/Sound.cpp.obj
 .PHONY : src/Sound/Sound.obj
@@ -343,6 +343,30 @@ src/Sound/Sound.s: src/Sound/Sound.cpp.s
 src/Sound/Sound.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Sound/Sound.cpp.s
 .PHONY : src/Sound/Sound.cpp.s
+
+src/UI/UI.obj: src/UI/UI.cpp.obj
+.PHONY : src/UI/UI.obj
+
+# target to build an object file
+src/UI/UI.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/UI/UI.cpp.obj
+.PHONY : src/UI/UI.cpp.obj
+
+src/UI/UI.i: src/UI/UI.cpp.i
+.PHONY : src/UI/UI.i
+
+# target to preprocess a source file
+src/UI/UI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/UI/UI.cpp.i
+.PHONY : src/UI/UI.cpp.i
+
+src/UI/UI.s: src/UI/UI.cpp.s
+.PHONY : src/UI/UI.s
+
+# target to generate assembly for a file
+src/UI/UI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/UI/UI.cpp.s
+.PHONY : src/UI/UI.cpp.s
 
 src/Utils/DrawImage.obj: src/Utils/DrawImage.cpp.obj
 .PHONY : src/Utils/DrawImage.obj
@@ -422,12 +446,15 @@ help:
 	@echo ... src/Map/Map.obj
 	@echo ... src/Map/Map.i
 	@echo ... src/Map/Map.s
-	@echo ... src/Player/Player.obj
-	@echo ... src/Player/Player.i
-	@echo ... src/Player/Player.s
+	@echo ... src/PLayer/Player.obj
+	@echo ... src/PLayer/Player.i
+	@echo ... src/PLayer/Player.s
 	@echo ... src/Sound/Sound.obj
 	@echo ... src/Sound/Sound.i
 	@echo ... src/Sound/Sound.s
+	@echo ... src/UI/UI.obj
+	@echo ... src/UI/UI.i
+	@echo ... src/UI/UI.s
 	@echo ... src/Utils/DrawImage.obj
 	@echo ... src/Utils/DrawImage.i
 	@echo ... src/Utils/DrawImage.s

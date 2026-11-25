@@ -13,7 +13,8 @@ find_package(SFML 3 CONFIG REQUIRED COMPONENTS Graphics Window System Audio)
 
 add_executable(app
     src/main.cpp
-    src/Player/Player.cpp
+    src/UI/UI.cpp
+    src/PLayer/Player.cpp
     src/Game/Game.cpp
     src/Map/Map.cpp
     src/Displays/Level/Level.cpp
@@ -27,6 +28,7 @@ add_executable(app
 
 target_include_directories(app PRIVATE 
     src/Player
+    src/UI
     src/Game
     src/Map
     src/Displays/Level
