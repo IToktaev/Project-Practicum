@@ -4,6 +4,7 @@
 #include "Map.h"
 #include "../Game/GameState.h"
 #include "../../UI/UI.h"
+#include "../../Entities/Thorns/Thorns.h"
 
 class Level {
     private:
@@ -15,9 +16,15 @@ class Level {
         sf::View m_view;
         sf::View m_uiView;
 
+        std::vector<Thorns> m_thorns;
+
         sf::Vector2f CountCameraPosition();
 
+        void HandleInteractions();
+
         int m_id;
+
+        sf::Texture m_thornsTexture;
 
     public:
         Level();

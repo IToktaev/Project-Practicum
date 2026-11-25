@@ -15,7 +15,11 @@ public:
     int GetHealth();
     int GetMaxHealth();
 
+    void TakeDamage();
+
     sf::Vector2f GetPosition() { return m_sprite.getPosition(); }
+    sf::FloatRect GetHitbox();
+    bool GetShockState() { return m_isShock; }
 
     void Init();
 
@@ -71,5 +75,7 @@ private:
 
     void MoveX(float dt, const Map& map);
     void MoveY(float dt, const Map& map);
-    sf::FloatRect GetHitbox() const;
+
+    bool m_isShock;
+    float m_shockDuration;
 };

@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/app.dir/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.obj.d"
   "CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.obj"
   "CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.obj.d"
+  "CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.obj"
+  "CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.obj.d"
   "CMakeFiles/app.dir/src/Game/Game.cpp.obj"
   "CMakeFiles/app.dir/src/Game/Game.cpp.obj.d"
   "CMakeFiles/app.dir/src/Map/Map.cpp.obj"

@@ -1,5 +1,7 @@
 #include "Level.h"
 #include <algorithm>
+#include "../../Entities/Thorns/Thorns.h"
+#include <iostream>
 
 const float DEATH_BORDER = 800.0f;
 const float VICTORY_BORDER = 7200.0f;
@@ -11,12 +13,24 @@ Level::Level()
     : m_view(sf::FloatRect({0.0f, 0.0f}, {WINDOW_WIDTH, WINDOW_HEIGHT})),
       m_uiView(sf::FloatRect({0.0f, 0.0f}, {WINDOW_WIDTH, WINDOW_HEIGHT}))
 {
+    if (!m_thornsTexture.loadFromFile("../assets/thorns.png")) {
+        std::cerr << "Failed to load thorns texture!\n";
+        return;
+    }
 }
 
 void Level::Init(int levelId) {
     m_id = levelId;
     m_map.MapInit(levelId);
     m_player.Init();
+
+    m_thorns.clear();
+
+    for (const ThornsTile spawn : m_map.GetThorns()) {
+        float worldX = spawn.col * TILE_SIZE;
+        float worldY = spawn.row * TILE_SIZE;
+        m_thorns.emplace_back(m_thornsTexture, worldX, worldY);
+    }
 }
 
 sf::Vector2f Level::CountCameraPosition() {
@@ -41,13 +55,31 @@ void Level::Update(float dt) {
     };
 
     m_player.Update(dt, tileSetSize, m_map);
-    m_view.setCenter(CountCameraPosition());
+    sf::Vector2f cameraPos = CountCameraPosition();
+    m_view.setCenter({ std::round(cameraPos.x), std::round(cameraPos.y) });
+
+    HandleInteractions();
+}
+
+void Level::HandleInteractions() {
+    sf::FloatRect playerBounds = m_player.GetHitbox();
+
+    for (Thorns thorn : m_thorns) {
+        if (playerBounds.findIntersection(thorn.GetBounds())) {
+            m_player.TakeDamage();
+        }
+    }
 }
 
 void Level::Draw(sf::RenderWindow& window) {
     window.setView(m_view);
 
     m_map.MapDraw(window);
+
+    for (Thorns thorn : m_thorns) {
+        thorn.Draw(window);
+    }
+
     m_player.Draw(window);
 
     m_uiView = window.getDefaultView();
@@ -66,6 +98,11 @@ GameState Level::HandleLevelStateChange(int& lastOpenedLevel) {
     }
 
     sf::Vector2f position = m_player.GetPosition();
+
+    bool isShock = m_player.GetShockState();
+    int lives = m_player.GetHealth();
+
+    if (lives == 0 )
 
     if (position.x > VICTORY_BORDER) {
         lastOpenedLevel++;

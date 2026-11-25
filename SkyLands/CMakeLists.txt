@@ -24,6 +24,7 @@ add_executable(app
     src/Utils/DrawImage.cpp
     src/Animator/Animator.cpp
     src/Sound/Sound.cpp
+    src/Entities/Thorns/Thorns.cpp
 )
 
 target_include_directories(app PRIVATE 
@@ -39,6 +40,7 @@ target_include_directories(app PRIVATE
     src/GlobalConstants
     src/Animator
     src/Sound
+    src/Entities/Thorns
 )
 
 target_link_libraries(app PRIVATE

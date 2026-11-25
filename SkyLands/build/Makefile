@@ -248,6 +248,30 @@ src/Displays/Menu/Menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.s
 .PHONY : src/Displays/Menu/Menu.cpp.s
 
+src/Entities/Thorns/Thorns.obj: src/Entities/Thorns/Thorns.cpp.obj
+.PHONY : src/Entities/Thorns/Thorns.obj
+
+# target to build an object file
+src/Entities/Thorns/Thorns.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.obj
+.PHONY : src/Entities/Thorns/Thorns.cpp.obj
+
+src/Entities/Thorns/Thorns.i: src/Entities/Thorns/Thorns.cpp.i
+.PHONY : src/Entities/Thorns/Thorns.i
+
+# target to preprocess a source file
+src/Entities/Thorns/Thorns.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.i
+.PHONY : src/Entities/Thorns/Thorns.cpp.i
+
+src/Entities/Thorns/Thorns.s: src/Entities/Thorns/Thorns.cpp.s
+.PHONY : src/Entities/Thorns/Thorns.s
+
+# target to generate assembly for a file
+src/Entities/Thorns/Thorns.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.s
+.PHONY : src/Entities/Thorns/Thorns.cpp.s
+
 src/Game/Game.obj: src/Game/Game.cpp.obj
 .PHONY : src/Game/Game.obj
 
@@ -440,6 +464,9 @@ help:
 	@echo ... src/Displays/Menu/Menu.obj
 	@echo ... src/Displays/Menu/Menu.i
 	@echo ... src/Displays/Menu/Menu.s
+	@echo ... src/Entities/Thorns/Thorns.obj
+	@echo ... src/Entities/Thorns/Thorns.i
+	@echo ... src/Entities/Thorns/Thorns.s
 	@echo ... src/Game/Game.obj
 	@echo ... src/Game/Game.i
 	@echo ... src/Game/Game.s

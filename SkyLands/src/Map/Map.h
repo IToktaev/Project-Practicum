@@ -5,20 +5,26 @@
 
 const uint32_t TILE_SIZE = 50;
 
+struct ThornsTile {
+    int col;
+    int row;
+};
+
 class Map {
+    public:
+        void MapInit(int mapId);
+        void MapDraw(sf::RenderWindow& window);
+        TileType MapGetTile(float worldX, float worldY) const;
+        bool MapIsSolid(float worldX, float worldY) const;
 
-public:
-    void MapInit(int mapId);
-    void MapDraw(sf::RenderWindow& window);
-    TileType MapGetTile(float worldX, float worldY) const;
-    bool MapIsSolid(float worldX, float worldY) const;
+        uint32_t GetWidth() { return m_width; }
+        uint32_t GetHeight() { return m_height; }
+        std::vector<ThornsTile> GetThorns() { return m_thorns; }
 
-    uint32_t GetWidth() { return m_width; }
-    uint32_t GetHeight() { return m_height; }
-
-private:
-    std::vector<TileType> m_grid;
-    uint32_t m_width = 0;
-    uint32_t m_height = 0;
-    sf::Texture m_tilesetTexture;
+    private:
+        std::vector<TileType> m_grid;
+        uint32_t m_width = 0;
+        uint32_t m_height = 0;
+        sf::Texture m_tilesetTexture;
+        std::vector<ThornsTile> m_thorns;
 };

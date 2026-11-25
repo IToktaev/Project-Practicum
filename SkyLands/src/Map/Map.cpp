@@ -42,10 +42,13 @@ void Map::MapInit(int mapId) {
     }
 
     m_grid.clear();
+    m_thorns.clear();
     m_width = 0;
     m_height = 0;
 
     std::string line;
+
+    int y = 0;
 
     while (std::getline(file, line)) {
         m_width = line.size();
@@ -55,9 +58,13 @@ void Map::MapInit(int mapId) {
                 m_grid.push_back(TileType::Empty);
             } else if (line[x] == SOLID_TILE) {
                 m_grid.push_back(TileType::Solid);
+            } else if (line[x] == THORNS_TILE) {
+                m_grid.push_back(TileType::Thorns);
+                m_thorns.push_back({x, y});
             }
         }
 
+        y++;
         m_height++;
     }
 }

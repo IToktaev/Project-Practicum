@@ -30,11 +30,14 @@ const int SPRITE_HEIGHT = 210;
 
 const int MAX_HEALTHBAR = 10;
 
+const int SHOCK_TIME_S = 1;
+
 Player::Player()
     : m_sprite(m_texture),
       m_animator(m_sprite),
       m_currentAnimation(AnimationState::Idle),  
-      m_healthbar(MAX_HEALTHBAR)
+      m_healthbar(MAX_HEALTHBAR),
+      m_isShock(false)
 {
     if (!m_texture.loadFromFile("../assets/hero_atlas.png")) {
         std::cerr << "Load error!\n";
@@ -185,7 +188,7 @@ void Player::ResolveCollisions(
     }
 }
 
-sf::FloatRect Player::GetHitbox() const {
+sf::FloatRect Player::GetHitbox() {
     sf::FloatRect bounds = m_sprite.getGlobalBounds();
 
     float width = bounds.size.x * HITBOX_X_SCALE_FACTOR;
@@ -294,10 +297,26 @@ void Player::Draw(sf::RenderWindow& window) {
     // window.draw(debugRect);
 }
 
+void Player::TakeDamage() {
+    if (m_isShock) {
+        return;
+    }
+
+    m_healthbar--;
+    m_isShock = true;
+    m_shockDuration = 0.0f;
+}
+
 void Player::Update(float dt, sf::Vector2f tileSetSize, Map& map) {
     CountMove(dt, m_velocity, m_sprite);
     MoveX(dt, map);
     MoveY(dt, map);
+
+    m_shockDuration += dt;
+    if (m_isShock && m_shockDuration > SHOCK_TIME_S) {
+        m_shockDuration = 0;
+        m_isShock = false;
+    }
 
     if (!m_isGrounded) {
         ChangeAnimation(AnimationState::Jump);
