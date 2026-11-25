@@ -325,7 +325,7 @@ CMakeFiles/app.dir/src/Displays/Level/Level.cpp.obj: \
  C:/SFML/include/SFML/Audio/SoundFileFactory.hpp \
  C:/SFML/include/SFML/Audio/SoundFileFactory.inl \
  C:/PP/SkyLands/src/Game/GameState.h C:/PP/SkyLands/src/UI/UI.h \
- C:/PP/SkyLands/src/Entities/Thorns/Thorns.h \
+ C:/PP/SkyLands/src/Entity/Entity.h \
  C:/msys64/ucrt64/include/c++/15.2.0/algorithm \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algo.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/algorithmfwd.h \

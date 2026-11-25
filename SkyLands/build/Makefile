@@ -248,29 +248,29 @@ src/Displays/Menu/Menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.s
 .PHONY : src/Displays/Menu/Menu.cpp.s
 
-src/Entities/Thorns/Thorns.obj: src/Entities/Thorns/Thorns.cpp.obj
-.PHONY : src/Entities/Thorns/Thorns.obj
+src/Entity/Entity.obj: src/Entity/Entity.cpp.obj
+.PHONY : src/Entity/Entity.obj
 
 # target to build an object file
-src/Entities/Thorns/Thorns.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.obj
-.PHONY : src/Entities/Thorns/Thorns.cpp.obj
+src/Entity/Entity.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Entity/Entity.cpp.obj
+.PHONY : src/Entity/Entity.cpp.obj
 
-src/Entities/Thorns/Thorns.i: src/Entities/Thorns/Thorns.cpp.i
-.PHONY : src/Entities/Thorns/Thorns.i
+src/Entity/Entity.i: src/Entity/Entity.cpp.i
+.PHONY : src/Entity/Entity.i
 
 # target to preprocess a source file
-src/Entities/Thorns/Thorns.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.i
-.PHONY : src/Entities/Thorns/Thorns.cpp.i
+src/Entity/Entity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Entity/Entity.cpp.i
+.PHONY : src/Entity/Entity.cpp.i
 
-src/Entities/Thorns/Thorns.s: src/Entities/Thorns/Thorns.cpp.s
-.PHONY : src/Entities/Thorns/Thorns.s
+src/Entity/Entity.s: src/Entity/Entity.cpp.s
+.PHONY : src/Entity/Entity.s
 
 # target to generate assembly for a file
-src/Entities/Thorns/Thorns.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.s
-.PHONY : src/Entities/Thorns/Thorns.cpp.s
+src/Entity/Entity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/Entity/Entity.cpp.s
+.PHONY : src/Entity/Entity.cpp.s
 
 src/Game/Game.obj: src/Game/Game.cpp.obj
 .PHONY : src/Game/Game.obj
@@ -464,9 +464,9 @@ help:
 	@echo ... src/Displays/Menu/Menu.obj
 	@echo ... src/Displays/Menu/Menu.i
 	@echo ... src/Displays/Menu/Menu.s
-	@echo ... src/Entities/Thorns/Thorns.obj
-	@echo ... src/Entities/Thorns/Thorns.i
-	@echo ... src/Entities/Thorns/Thorns.s
+	@echo ... src/Entity/Entity.obj
+	@echo ... src/Entity/Entity.i
+	@echo ... src/Entity/Entity.s
 	@echo ... src/Game/Game.obj
 	@echo ... src/Game/Game.i
 	@echo ... src/Game/Game.s

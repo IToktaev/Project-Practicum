@@ -5,7 +5,7 @@
 
 const uint32_t TILE_SIZE = 50;
 
-struct ThornsTile {
+struct EntityTile {
     int col;
     int row;
 };
@@ -19,12 +19,15 @@ class Map {
 
         uint32_t GetWidth() { return m_width; }
         uint32_t GetHeight() { return m_height; }
-        std::vector<ThornsTile> GetThorns() { return m_thorns; }
+        std::vector<EntityTile> GetThorns() { return m_thorns; }
+        std::vector<EntityTile> GetKits() { return m_kits; }
 
     private:
         std::vector<TileType> m_grid;
         uint32_t m_width = 0;
         uint32_t m_height = 0;
         sf::Texture m_tilesetTexture;
-        std::vector<ThornsTile> m_thorns;
+        
+        std::vector<EntityTile> m_thorns;
+        std::vector<EntityTile> m_kits;
 };

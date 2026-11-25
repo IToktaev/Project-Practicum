@@ -43,6 +43,7 @@ void Map::MapInit(int mapId) {
 
     m_grid.clear();
     m_thorns.clear();
+    m_kits.clear();
     m_width = 0;
     m_height = 0;
 
@@ -61,6 +62,9 @@ void Map::MapInit(int mapId) {
             } else if (line[x] == THORNS_TILE) {
                 m_grid.push_back(TileType::Thorns);
                 m_thorns.push_back({x, y});
+            } else if (line[x] == KIT_TILE) {
+                m_grid.push_back(TileType::Kit);
+                m_kits.push_back({x, y});
             }
         }
 

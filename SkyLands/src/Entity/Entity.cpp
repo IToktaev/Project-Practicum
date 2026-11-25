@@ -1,7 +1,7 @@
-#include "Thorns.h"
+#include "Entity.h"
 #include <Map.h>
 
-Thorns::Thorns(const sf::Texture& texture, float x, float y) 
+Entity::Entity(const sf::Texture& texture, float x, float y) 
     : m_sprite(texture)
 {
     m_sprite.setTexture(texture);
@@ -15,10 +15,10 @@ Thorns::Thorns(const sf::Texture& texture, float x, float y)
     m_sprite.setPosition({x, y});
 }
 
-void Thorns::Draw(sf::RenderWindow& window) {
+void Entity::Draw(sf::RenderWindow& window) {
     window.draw(m_sprite);
 }
 
-sf::FloatRect Thorns::GetBounds() {
+sf::FloatRect Entity::GetBounds() {
     return m_sprite.getGlobalBounds();
 }

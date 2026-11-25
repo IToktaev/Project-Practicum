@@ -24,20 +24,19 @@ const float HITBOX_X_SCALE_FACTOR = 0.6;
 
 const float RUN_DURATION = 0.2f;
 const float BASE_DURATION = 0.1f;
+const float DEATH_DURATION = 0.5f;
 
 const int SPRITE_WIDTH = 220;
 const int SPRITE_HEIGHT = 210;
 
-const int MAX_HEALTHBAR = 10;
+const int MAX_HEALTHBAR = 3;
 
 const int SHOCK_TIME_S = 1;
 
 Player::Player()
     : m_sprite(m_texture),
       m_animator(m_sprite),
-      m_currentAnimation(AnimationState::Idle),  
-      m_healthbar(MAX_HEALTHBAR),
-      m_isShock(false)
+      m_currentAnimation(AnimationState::Idle)
 {
     if (!m_texture.loadFromFile("../assets/hero_atlas.png")) {
         std::cerr << "Load error!\n";
@@ -73,6 +72,14 @@ void Player::SetIdleAnimation() {
     }, BASE_DURATION);
 }
 
+void Player::SetDeathAnimation() {
+    m_animator.SetAnimation({
+        sf::IntRect({180, 1050}, {SPRITE_WIDTH, SPRITE_HEIGHT}),
+        sf::IntRect({360, 1050}, {SPRITE_WIDTH, SPRITE_HEIGHT}),
+        sf::IntRect({540, 1050}, {SPRITE_WIDTH, SPRITE_HEIGHT})
+    }, DEATH_DURATION);
+}
+
 void Player::SetJumpAnimation() {
     m_animator.SetAnimation({
         sf::IntRect({420, 640}, {SPRITE_WIDTH, SPRITE_HEIGHT})
@@ -97,6 +104,10 @@ void Player::ChangeAnimation(AnimationState newState) {
 
         case AnimationState::Jump:
             SetJumpAnimation();
+            break;
+
+        case AnimationState::Death:
+            SetDeathAnimation();
             break;
     }
 }
@@ -282,6 +293,12 @@ void Player::MoveY(float dt, const Map& map) {
 }
 
 void Player::Draw(sf::RenderWindow& window) {
+    if (m_isShock) {
+        m_sprite.setColor(sf::Color(255, 80, 80));
+    } else {
+        m_sprite.setColor(sf::Color::White);
+    }
+
     window.draw(m_sprite);
 
     // sf::RectangleShape debugRect;
@@ -297,6 +314,12 @@ void Player::Draw(sf::RenderWindow& window) {
     // window.draw(debugRect);
 }
 
+void Player::GiveHearth() {
+    if (m_healthbar < MAX_HEALTHBAR) {
+        m_healthbar++;
+    }
+}
+
 void Player::TakeDamage() {
     if (m_isShock) {
         return;
@@ -308,9 +331,15 @@ void Player::TakeDamage() {
 }
 
 void Player::Update(float dt, sf::Vector2f tileSetSize, Map& map) {
-    CountMove(dt, m_velocity, m_sprite);
-    MoveX(dt, map);
-    MoveY(dt, map);
+    if (m_healthbar == 0) {
+        ChangeAnimation(AnimationState::Death);
+    }
+
+    if (m_healthbar > 0) {
+        CountMove(dt, m_velocity, m_sprite);
+        MoveX(dt, map);
+        MoveY(dt, map);
+    }
 
     m_shockDuration += dt;
     if (m_isShock && m_shockDuration > SHOCK_TIME_S) {
@@ -329,7 +358,7 @@ void Player::Update(float dt, sf::Vector2f tileSetSize, Map& map) {
                 m_runSoundClock.restart();
             }
         }
-    } else {
+    } else if (m_healthbar > 0) {
         ChangeAnimation(AnimationState::Idle);
     }
     
@@ -349,6 +378,10 @@ void Player::Init() {
     m_jumpForce = MIN_JUMP_FORCE;
     m_isGrounded = false;
     m_isJumping = false;
+
+    m_healthbar = MAX_HEALTHBAR;
+    m_isShock = false;
+    m_shockDuration = 0;
 
     SetIdleAnimation();
 }

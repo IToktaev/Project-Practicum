@@ -326,6 +326,5 @@ CMakeFiles/app.dir/src/Displays/Home/Home.cpp.obj: \
  C:/SFML/include/SFML/Audio/SoundFileFactory.hpp \
  C:/SFML/include/SFML/Audio/SoundFileFactory.inl \
  C:/PP/SkyLands/src/Game/GameState.h C:/PP/SkyLands/src/UI/UI.h \
- C:/PP/SkyLands/src/Entities/Thorns/Thorns.h \
- C:/PP/SkyLands/src/Utils/DrawImage.h \
+ C:/PP/SkyLands/src/Entity/Entity.h C:/PP/SkyLands/src/Utils/DrawImage.h \
  C:/PP/SkyLands/src/GlobalConstants/GlobalConstants.h

@@ -4,7 +4,7 @@
 #include "Map.h"
 #include "../Game/GameState.h"
 #include "../../UI/UI.h"
-#include "../../Entities/Thorns/Thorns.h"
+#include "../../Entity/Entity.h"
 
 class Level {
     private:
@@ -16,7 +16,8 @@ class Level {
         sf::View m_view;
         sf::View m_uiView;
 
-        std::vector<Thorns> m_thorns;
+        std::vector<Entity> m_thorns;
+        std::vector<Entity> m_kits;
 
         sf::Vector2f CountCameraPosition();
 
@@ -25,6 +26,7 @@ class Level {
         int m_id;
 
         sf::Texture m_thornsTexture;
+        sf::Texture m_kitTexture;
 
     public:
         Level();

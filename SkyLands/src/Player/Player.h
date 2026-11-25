@@ -16,6 +16,7 @@ public:
     int GetMaxHealth();
 
     void TakeDamage();
+    void GiveHearth();
 
     sf::Vector2f GetPosition() { return m_sprite.getPosition(); }
     sf::FloatRect GetHitbox();
@@ -26,7 +27,8 @@ public:
 enum class AnimationState : uint8_t {
     Idle,
     Run,
-    Jump
+    Jump,
+    Death
 };    
 
 private:
@@ -52,8 +54,7 @@ private:
     void SetIdleAnimation();
     void SetRunAnimation();
     void SetJumpAnimation();
-    void SetFlyAnimation();
-    void SetLandingAnimation();
+    void SetDeathAnimation();
 
     void ChangeAnimation(AnimationState newState);
 

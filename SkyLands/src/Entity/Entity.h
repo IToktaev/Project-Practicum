@@ -1,9 +1,9 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-class Thorns {
+class Entity {
     public:
-        Thorns(const sf::Texture& texture, float x, float y);
+        Entity(const sf::Texture& texture, float x, float y);
         void Draw(sf::RenderWindow& window);
         sf::FloatRect GetBounds();
     private:

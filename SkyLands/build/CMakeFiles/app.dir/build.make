@@ -251,20 +251,20 @@ CMakeFiles/app.dir/src/Sound/Sound.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/Sound/Sound.cpp.s"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\PP\SkyLands\src\Sound\Sound.cpp -o CMakeFiles\app.dir\src\Sound\Sound.cpp.s
 
-CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.obj: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
-CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.obj: C:/PP/SkyLands/src/Entities/Thorns/Thorns.cpp
-CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\PP\Skylands\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.obj"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.obj -MF CMakeFiles\app.dir\src\Entities\Thorns\Thorns.cpp.obj.d -o CMakeFiles\app.dir\src\Entities\Thorns\Thorns.cpp.obj -c C:\PP\SkyLands\src\Entities\Thorns\Thorns.cpp
+CMakeFiles/app.dir/src/Entity/Entity.cpp.obj: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/src/Entity/Entity.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
+CMakeFiles/app.dir/src/Entity/Entity.cpp.obj: C:/PP/SkyLands/src/Entity/Entity.cpp
+CMakeFiles/app.dir/src/Entity/Entity.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\PP\Skylands\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/app.dir/src/Entity/Entity.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/Entity/Entity.cpp.obj -MF CMakeFiles\app.dir\src\Entity\Entity.cpp.obj.d -o CMakeFiles\app.dir\src\Entity\Entity.cpp.obj -c C:\PP\SkyLands\src\Entity\Entity.cpp
 
-CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.i"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\PP\SkyLands\src\Entities\Thorns\Thorns.cpp > CMakeFiles\app.dir\src\Entities\Thorns\Thorns.cpp.i
+CMakeFiles/app.dir/src/Entity/Entity.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/src/Entity/Entity.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\PP\SkyLands\src\Entity\Entity.cpp > CMakeFiles\app.dir\src\Entity\Entity.cpp.i
 
-CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.s"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\PP\SkyLands\src\Entities\Thorns\Thorns.cpp -o CMakeFiles\app.dir\src\Entities\Thorns\Thorns.cpp.s
+CMakeFiles/app.dir/src/Entity/Entity.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/Entity/Entity.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\PP\SkyLands\src\Entity\Entity.cpp -o CMakeFiles\app.dir\src\Entity\Entity.cpp.s
 
 # Object files for target app
 app_OBJECTS = \
@@ -280,7 +280,7 @@ app_OBJECTS = \
 "CMakeFiles/app.dir/src/Utils/DrawImage.cpp.obj" \
 "CMakeFiles/app.dir/src/Animator/Animator.cpp.obj" \
 "CMakeFiles/app.dir/src/Sound/Sound.cpp.obj" \
-"CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.obj"
+"CMakeFiles/app.dir/src/Entity/Entity.cpp.obj"
 
 # External object files for target app
 app_EXTERNAL_OBJECTS =
@@ -297,7 +297,7 @@ app.exe: CMakeFiles/app.dir/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.o
 app.exe: CMakeFiles/app.dir/src/Utils/DrawImage.cpp.obj
 app.exe: CMakeFiles/app.dir/src/Animator/Animator.cpp.obj
 app.exe: CMakeFiles/app.dir/src/Sound/Sound.cpp.obj
-app.exe: CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.obj
+app.exe: CMakeFiles/app.dir/src/Entity/Entity.cpp.obj
 app.exe: CMakeFiles/app.dir/build.make
 app.exe: C:/SFML/lib/libsfml-graphics-d.a
 app.exe: C:/SFML/lib/libsfml-audio-d.a

@@ -315,7 +315,7 @@ CMakeFiles/app.dir/src/Animator/Animator.cpp.obj: C:/PP/SkyLands/src/Animator/An
 CMakeFiles/app.dir/src/Displays/Home/Home.cpp.obj: C:/PP/SkyLands/src/Displays/Home/Home.cpp \
   C:/PP/SkyLands/src/Animator/Animator.h \
   C:/PP/SkyLands/src/Displays/Level/Level.h \
-  C:/PP/SkyLands/src/Entities/Thorns/Thorns.h \
+  C:/PP/SkyLands/src/Entity/Entity.h \
   C:/PP/SkyLands/src/Game/GameState.h \
   C:/PP/SkyLands/src/GlobalConstants/GlobalConstants.h \
   C:/PP/SkyLands/src/Map/Map.h \
@@ -657,7 +657,7 @@ CMakeFiles/app.dir/src/Displays/Home/Home.cpp.obj: C:/PP/SkyLands/src/Displays/H
 
 CMakeFiles/app.dir/src/Displays/Level/Level.cpp.obj: C:/PP/SkyLands/src/Displays/Level/Level.cpp \
   C:/PP/SkyLands/src/Animator/Animator.h \
-  C:/PP/SkyLands/src/Entities/Thorns/Thorns.h \
+  C:/PP/SkyLands/src/Entity/Entity.h \
   C:/PP/SkyLands/src/Game/GameState.h \
   C:/PP/SkyLands/src/Map/Map.h \
   C:/PP/SkyLands/src/Map/TileType.h \
@@ -1005,7 +1005,7 @@ CMakeFiles/app.dir/src/Displays/Level/Level.cpp.obj: C:/PP/SkyLands/src/Displays
 CMakeFiles/app.dir/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp.obj: C:/PP/SkyLands/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp \
   C:/PP/SkyLands/src/Animator/Animator.h \
   C:/PP/SkyLands/src/Displays/Level/Level.h \
-  C:/PP/SkyLands/src/Entities/Thorns/Thorns.h \
+  C:/PP/SkyLands/src/Entity/Entity.h \
   C:/PP/SkyLands/src/Game/GameState.h \
   C:/PP/SkyLands/src/Map/Map.h \
   C:/PP/SkyLands/src/Map/TileType.h \
@@ -1657,7 +1657,7 @@ CMakeFiles/app.dir/src/Displays/Menu/Menu.cpp.obj: C:/PP/SkyLands/src/Displays/M
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h \
   C:/PP/SkyLands/src/Displays/Menu/Menu.h
 
-CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.obj: C:/PP/SkyLands/src/Entities/Thorns/Thorns.cpp \
+CMakeFiles/app.dir/src/Entity/Entity.cpp.obj: C:/PP/SkyLands/src/Entity/Entity.cpp \
   C:/PP/SkyLands/src/Map/Map.h \
   C:/PP/SkyLands/src/Map/TileType.h \
   C:/SFML/include/SFML/Config.hpp \
@@ -1968,7 +1968,7 @@ CMakeFiles/app.dir/src/Entities/Thorns/Thorns.cpp.obj: C:/PP/SkyLands/src/Entiti
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h \
-  C:/PP/SkyLands/src/Entities/Thorns/Thorns.h
+  C:/PP/SkyLands/src/Entity/Entity.h
 
 CMakeFiles/app.dir/src/Game/Game.cpp.obj: C:/PP/SkyLands/src/Game/Game.cpp \
   C:/PP/SkyLands/src/Animator/Animator.h \
@@ -1976,7 +1976,7 @@ CMakeFiles/app.dir/src/Game/Game.cpp.obj: C:/PP/SkyLands/src/Game/Game.cpp \
   C:/PP/SkyLands/src/Displays/Level/Level.h \
   C:/PP/SkyLands/src/Displays/LevelFinalScreen/LevelFinalScreen.h \
   C:/PP/SkyLands/src/Displays/Menu/Menu.h \
-  C:/PP/SkyLands/src/Entities/Thorns/Thorns.h \
+  C:/PP/SkyLands/src/Entity/Entity.h \
   C:/PP/SkyLands/src/Game/GameState.h \
   C:/PP/SkyLands/src/GlobalConstants/GlobalConstants.h \
   C:/PP/SkyLands/src/Map/Map.h \
@@ -3878,7 +3878,7 @@ CMakeFiles/app.dir/src/main.cpp.obj: C:/PP/SkyLands/src/main.cpp \
   C:/PP/SkyLands/src/Displays/Level/Level.h \
   C:/PP/SkyLands/src/Displays/LevelFinalScreen/LevelFinalScreen.h \
   C:/PP/SkyLands/src/Displays/Menu/Menu.h \
-  C:/PP/SkyLands/src/Entities/Thorns/Thorns.h \
+  C:/PP/SkyLands/src/Entity/Entity.h \
   C:/PP/SkyLands/src/Game/GameState.h \
   C:/PP/SkyLands/src/Map/Map.h \
   C:/PP/SkyLands/src/Map/TileType.h \
@@ -4222,6 +4222,8 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_vector.h:
 C:/msys64/ucrt64/include/c++/15.2.0/bits/refwrap.h:
 
 C:/SFML/include/SFML/Graphics/Sprite.hpp:
+
+C:/PP/SkyLands/src/Entity/Entity.cpp:
 
 C:/SFML/include/SFML/Window/Export.hpp:
 
@@ -4887,6 +4889,8 @@ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/fstream.tcc:
 
+C:/PP/SkyLands/src/Entity/Entity.h:
+
 C:/PP/SkyLands/src/Animator/Animator.h:
 
 C:/PP/SkyLands/src/Displays/Home/Home.cpp:
@@ -4894,8 +4898,6 @@ C:/PP/SkyLands/src/Displays/Home/Home.cpp:
 C:/PP/SkyLands/src/Utils/DrawImage.h:
 
 C:/PP/SkyLands/src/Displays/Level/Level.h:
-
-C:/PP/SkyLands/src/Entities/Thorns/Thorns.h:
 
 C:/PP/SkyLands/src/GlobalConstants/GlobalConstants.h:
 
@@ -4938,8 +4940,6 @@ C:/PP/SkyLands/src/Displays/LevelFinalScreen/LevelFinalScreen.cpp:
 C:/PP/SkyLands/src/Displays/LevelFinalScreen/LevelFinalScreen.h:
 
 C:/PP/SkyLands/src/Displays/Menu/Menu.h:
-
-C:/PP/SkyLands/src/Entities/Thorns/Thorns.cpp:
 
 C:/PP/SkyLands/src/Game/Game.cpp:
 

@@ -1,7 +1,7 @@
 #include "Level.h"
 #include <algorithm>
-#include "../../Entities/Thorns/Thorns.h"
 #include <iostream>
+#include "../../Entity/Entity.h"
 
 const float DEATH_BORDER = 800.0f;
 const float VICTORY_BORDER = 7200.0f;
@@ -17,6 +17,11 @@ Level::Level()
         std::cerr << "Failed to load thorns texture!\n";
         return;
     }
+
+    if (!m_kitTexture.loadFromFile("../assets/kit.png")) {
+        std::cerr << "Failed to load kit texture!\n";
+        return;
+    }
 }
 
 void Level::Init(int levelId) {
@@ -25,11 +30,18 @@ void Level::Init(int levelId) {
     m_player.Init();
 
     m_thorns.clear();
+    m_kits.clear();
 
-    for (const ThornsTile spawn : m_map.GetThorns()) {
+    for (const EntityTile spawn : m_map.GetThorns()) {
         float worldX = spawn.col * TILE_SIZE;
         float worldY = spawn.row * TILE_SIZE;
         m_thorns.emplace_back(m_thornsTexture, worldX, worldY);
+    }
+
+    for (const EntityTile spawn : m_map.GetKits()) {
+        float worldX = spawn.col * TILE_SIZE;
+        float worldY = spawn.row * TILE_SIZE;
+        m_kits.emplace_back(m_kitTexture, worldX, worldY);
     }
 }
 
@@ -64,9 +76,18 @@ void Level::Update(float dt) {
 void Level::HandleInteractions() {
     sf::FloatRect playerBounds = m_player.GetHitbox();
 
-    for (Thorns thorn : m_thorns) {
+    for (Entity thorn : m_thorns) {
         if (playerBounds.findIntersection(thorn.GetBounds())) {
             m_player.TakeDamage();
+        }
+    }
+
+    for (size_t i = 0; i < m_kits.size(); ) {
+        if (playerBounds.findIntersection(m_kits[i].GetBounds())) {
+            m_player.GiveHearth();
+            m_kits.erase(m_kits.begin() + i);
+        } else {
+            ++i;
         }
     }
 }
@@ -76,9 +97,14 @@ void Level::Draw(sf::RenderWindow& window) {
 
     m_map.MapDraw(window);
 
-    for (Thorns thorn : m_thorns) {
+    for (Entity thorn : m_thorns) {
         thorn.Draw(window);
     }
+
+    for (Entity kit : m_kits) {
+        kit.Draw(window);
+    }
+
 
     m_player.Draw(window);
 
@@ -102,7 +128,9 @@ GameState Level::HandleLevelStateChange(int& lastOpenedLevel) {
     bool isShock = m_player.GetShockState();
     int lives = m_player.GetHealth();
 
-    if (lives == 0 )
+    if (lives == 0 && !isShock) {
+        return defeatState;
+    }
 
     if (position.x > VICTORY_BORDER) {
         lastOpenedLevel++;
